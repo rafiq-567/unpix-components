@@ -10,13 +10,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@hello-pangea/dnd": "^18.0.1",
+    "@mui/material": "^9.1.0",
+    "@mui/x-data-grid": "^9.4.0",
+    "@mui/x-date-pickers": "^9.4.0",
     "@tailwindcss/vite": "^4.3.0",
+    "dayjs": "^1.11.21",
     "leaflet": "^1.9.4",
     "lucide-react": "^1.17.0",
     "prop-types": "^15.8.1",
     "react": "^19.2.6",
+    "react-calendar": "^6.0.1",
     "react-dom": "^19.2.6",
     "react-leaflet": "^5.0.0",
+    "react-player": "^3.4.0",
     "recharts": "^3.8.1",
     "tailwindcss": "^4.3.0"
   },

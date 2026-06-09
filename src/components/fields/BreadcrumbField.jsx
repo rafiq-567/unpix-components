@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 export default function BreadcrumbField({ label }) {
   return (
-    <nav className="text-sm text-gray-500 flex items-center gap-1">
-      <span className="hover:text-indigo-500 cursor-pointer">Home</span>
-      <span>/</span>
-      <span className="hover:text-indigo-500 cursor-pointer">Section</span>
-      <span>/</span>
-      <span className="text-gray-800 font-medium">{label}</span>
+    <nav className="text-sm text-[var(--color-text-muted)] flex items-center gap-1">
+      <span className="hover:text-[var(--color-accent)] cursor-pointer">Home</span>
+      <span className="text-[var(--color-border-strong)]">/</span>
+      <span className="hover:text-[var(--color-accent)] cursor-pointer">Section</span>
+      <span className="text-[var(--color-border-strong)]">/</span>
+      <span className="text-[var(--color-text-primary)] font-medium">{label}</span>
     </nav>
   );
 }

@@ -5,11 +5,11 @@ export default function ButtonGroupField({ label }) {
   const options = ["Option 1", "Option 2"];
   return (
     <div>
-      <label className="block mb-2 text-sm font-medium">{label}</label>
+      <label className="block mb-2 text-sm font-medium text-[var(--color-text-secondary)]">{label}</label>
       <div className="flex gap-2">
         {options.map((opt) => (
           <button key={opt} onClick={() => setSelected(opt)}
-            className={`px-4 py-2 rounded border text-sm transition ${selected === opt ? "bg-indigo-500 text-white border-indigo-500" : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50"}`}>
+            className={`px-4 py-2 rounded border text-sm transition ${selected === opt ? "bg-[var(--color-accent)] text-white border-[var(--color-accent)]" : "bg-[var(--color-surface)] text-[var(--color-text-secondary)] border-[var(--color-border)] hover:bg-[var(--color-bg-hover)]"}`}>
             {opt}
           </button>
         ))}

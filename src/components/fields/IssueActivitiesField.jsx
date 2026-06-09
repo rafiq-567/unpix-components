@@ -7,23 +7,23 @@ const activities = [
 ];
 export default function IssueActivitiesField({ label }) {
   return (
-    <div className="border rounded-xl p-4 bg-white">
-      <h3 className="font-semibold text-gray-800 mb-4">{label}</h3>
+    <div className="border border-[var(--color-border)] rounded-xl p-4 bg-[var(--color-surface)]">
+      <h3 className="font-semibold text-[var(--color-text-primary)] mb-4">{label}</h3>
       <div className="space-y-4">
         {activities.map((a, i) => {
           const Icon = a.icon;
           return (
             <div key={i} className="flex gap-3">
-              <Icon size={16} className="text-gray-400 mt-0.5 shrink-0" />
+              <Icon size={16} className="text-[var(--color-text-placeholder)] mt-0.5 shrink-0" />
               <div>
-                <p className="text-sm text-gray-600">{a.text} <strong>{a.bold}</strong> {a.suffix}</p>
-                <p className="text-xs text-gray-400 mt-0.5">{a.time}</p>
+                <p className="text-sm text-[var(--color-text-secondary)]">{a.text} <strong className="text-[var(--color-text-primary)]">{a.bold}</strong> {a.suffix}</p>
+                <p className="text-xs text-[var(--color-text-placeholder)] mt-0.5">{a.time}</p>
               </div>
             </div>
           );
         })}
       </div>
-      <button className="mt-4 text-xs text-indigo-500 w-full text-center">View all</button>
+      <button className="mt-4 text-xs text-[var(--color-accent)] w-full text-center">View all</button>
     </div>
   );
 }

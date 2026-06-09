@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 export default function StackField({ label }) {
   return (
-    <div className="border-2 border-dashed border-blue-300 rounded-lg p-3 bg-blue-50 space-y-2">
-      <p className="text-xs font-medium text-blue-600">{label} — Stack</p>
+    <div className="border-2 border-dashed border-[var(--color-accent)] rounded-lg p-3 bg-[var(--color-accent-subtle)] space-y-2">
+      <p className="text-xs font-medium text-[var(--color-accent-text)]">{label} — Stack</p>
       {["Item 1", "Item 2", "Item 3"].map((item) => (
-        <div key={item} className="bg-white border border-blue-200 rounded px-3 py-1.5 text-xs text-blue-700">{item}</div>
+        <div key={item} className="bg-[var(--color-surface)] border border-[var(--color-border)] rounded px-3 py-1.5 text-xs text-[var(--color-text-secondary)]">{item}</div>
       ))}
     </div>
   );
