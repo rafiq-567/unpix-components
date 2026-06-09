@@ -23,8 +23,8 @@ export default function PopoverField({
   };
 
   const arrowPlacement = {
-    bottom: { top: -6, left: '50%', transform: 'translateX(-50%)', borderLeft: '6px solid transparent', borderRight: '6px solid transparent', borderBottom: '6px solid #fff', filter: 'drop-shadow(0 -1px 1px rgba(0,0,0,0.08))' },
-    top:    { bottom: -6, left: '50%', transform: 'translateX(-50%)', borderLeft: '6px solid transparent', borderRight: '6px solid transparent', borderTop: '6px solid #fff', filter: 'drop-shadow(0 1px 1px rgba(0,0,0,0.08))' },
+    bottom: { top: -6, left: '50%', transform: 'translateX(-50%)', borderLeft: '6px solid transparent', borderRight: '6px solid transparent', borderBottom: '6px solid var(--color-surface)', filter: 'drop-shadow(0 -1px 1px var(--color-border))' },
+    top:    { bottom: -6, left: '50%', transform: 'translateX(-50%)', borderLeft: '6px solid transparent', borderRight: '6px solid transparent', borderTop: '6px solid var(--color-surface)', filter: 'drop-shadow(0 1px 1px var(--color-border))' },
   };
 
   return (
@@ -35,7 +35,7 @@ export default function PopoverField({
           onClick={() => setOpen(!open)}
           style={{
             padding: '8px 16px',
-            border: '1px solid #d1d5db',
+            border: '1px solid var(--color-border)',
             borderRadius: 8,
             background: open ? 'var(--color-bg-subtle)' : 'var(--color-surface)',
             cursor: 'pointer',
@@ -43,6 +43,8 @@ export default function PopoverField({
             fontWeight: 500,
             color: 'var(--color-text-secondary)',
           }}
+          onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--color-bg-hover)'}
+          onMouseLeave={e => e.currentTarget.style.backgroundColor = open ? 'var(--color-bg-subtle)' : 'var(--color-surface)'}
         >
           {triggerLabel}
         </button>
@@ -53,9 +55,9 @@ export default function PopoverField({
             ...placements[placement],
             width,
             backgroundColor: 'var(--color-surface)',
-            border: '1px solid #e5e7eb',
+            border: '1px solid var(--color-border)',
             borderRadius: 10,
-            boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+            boxShadow: 'var(--shadow-lg)',
             zIndex: 400,
             padding: '14px 16px',
           }}>
@@ -90,18 +92,11 @@ export default function PopoverField({
 }
 
 PopoverField.propTypes = {
-  /** Trigger button label */
   triggerLabel: PropTypes.string,
-  /** Popover title */
   title: PropTypes.string,
-  /** Popover body content */
   content: PropTypes.string,
-  /** Placement relative to trigger */
   placement: PropTypes.oneOf(['bottom', 'top', 'left', 'right']),
-  /** Show pointing arrow */
   showArrow: PropTypes.bool,
-  /** Start open */
   defaultOpen: PropTypes.bool,
-  /** Width in pixels */
   width: PropTypes.number,
 };

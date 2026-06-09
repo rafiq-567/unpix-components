@@ -1,12 +1,13 @@
 import PropTypes from "prop-types";
+
 export default function Card({ title = "Card Title", description = "Card description goes here.", footer = "Card Footer" }) {
   return (
-    <div className="border rounded-2xl shadow-sm bg-white overflow-hidden">
-      <div className="p-5 border-b">
-        <h3 className="font-semibold text-gray-800 text-base">{title}</h3>
-        <p className="text-sm text-gray-500 mt-1">{description}</p>
+    <div className="border border-[var(--color-border)] mt-2 rounded-2xl shadow-[var(--shadow-sm)] bg-[var(--color-surface)] overflow-hidden font-sans">
+      <div className="p-5 border-b border-[var(--color-border)]">
+        <h3 className="font-semibold text-[var(--color-text-primary)] text-base">{title}</h3>
+        <p className="text-sm text-[var(--color-text-muted)] mt-1">{description}</p>
       </div>
-      <div className="px-5 py-3 bg-gray-50 text-xs text-gray-400">{footer}</div>
+      <div className="px-5 py-3 bg-[var(--color-bg-subtle)] text-xs text-[var(--color-text-placeholder)]">{footer}</div>
     </div>
   );
 }

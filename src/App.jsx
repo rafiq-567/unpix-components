@@ -192,7 +192,6 @@ function App() {
       <TypographyField />
       <TableField />
       <CircularProgressField /> 
-      {/* no  */}
       <LinearProgressField />
 
       <BoxField />
@@ -235,11 +234,6 @@ function App() {
 
 
 
-
-
-      <CodeBlockField />
-
-
       <CreatedByYouField />
 
 
@@ -258,16 +252,7 @@ function App() {
       <ParagraphField />
 
 
-
-
       <SelectField />
-
-
-
-
-
-
-
 
       <UnorderedListField />
 
@@ -288,7 +273,8 @@ function App() {
       <TabsField />
       <ToastField />
       <SpinnerField />
-      <NumberInputField />
+      <NumberInputField /> 
+      {/* no */}
       <SearchField />
       <MenuField />
       <StepperField />

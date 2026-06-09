@@ -9,28 +9,39 @@ const steps = [
 export default function StepWithText({ label = "Steps with Text" }) {
   const [current, setCurrent] = useState(0);
   return (
-    <div>
-      <p className="text-sm font-medium text-gray-700 mb-3">{label}</p>
-      <div className="flex items-start mb-6">
+    <div style={{ fontFamily: "sans-serif" }}>
+      <p style={{ fontSize: 13, fontWeight: 500, color: "var(--color-text-secondary)", marginBottom: 12 }}>{label}</p>
+      <div style={{ display: "flex", alignItems: "flex-start", marginBottom: 24 }}>
         {steps.map((step, i) => (
-          <div key={step.label} className="flex items-center flex-1 last:flex-none">
-            <div className="flex flex-col items-center">
-              <div onClick={() => setCurrent(i)}
-                className={`w-9 h-9 rounded-full flex items-center justify-center cursor-pointer transition font-bold text-sm ${i < current ? "bg-indigo-500 text-white" : i === current ? "bg-indigo-600 text-white ring-4 ring-indigo-100" : "bg-gray-200 text-gray-500"}`}>
+          <div key={step.label} style={{ display: "flex", alignItems: "center", flex: i < steps.length - 1 ? 1 : "none" }}>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+              <div onClick={() => setCurrent(i)} style={{
+                width: 36, height: 36, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center",
+                cursor: "pointer", fontWeight: 700, fontSize: 13, transition: "all 0.15s",
+                backgroundColor: i < current ? "var(--color-accent)" : i === current ? "var(--color-accent)" : "var(--color-bg-muted)",
+                color: i <= current ? "#fff" : "var(--color-text-muted)",
+                boxShadow: i === current ? "0 0 0 4px var(--color-accent-subtle)" : "none",
+              }}>
                 {i < current ? "✓" : i + 1}
               </div>
-              <p className={`text-xs font-medium mt-1 ${i === current ? "text-indigo-600" : "text-gray-500"}`}>{step.label}</p>
-              <p className="text-xs text-gray-400">{step.desc}</p>
+              <p style={{ fontSize: 11, fontWeight: 500, marginTop: 4, color: i === current ? "var(--color-accent)" : "var(--color-text-muted)" }}>{step.label}</p>
+              <p style={{ fontSize: 11, color: "var(--color-text-placeholder)" }}>{step.desc}</p>
             </div>
-            {i < steps.length - 1 && <div className={`flex-1 h-0.5 mx-2 mt-[-18px] ${i < current ? "bg-indigo-500" : "bg-gray-200"}`} />}
+            {i < steps.length - 1 && (
+              <div style={{ flex: 1, height: 2, margin: "0 8px", marginTop: -36, backgroundColor: i < current ? "var(--color-accent)" : "var(--color-border)" }} />
+            )}
           </div>
         ))}
       </div>
-      <div className="flex gap-2">
+      <div style={{ display: "flex", gap: 8 }}>
         <button onClick={() => setCurrent(c => Math.max(0, c - 1))} disabled={current === 0}
-          className="px-4 py-2 text-sm border rounded-lg disabled:opacity-40 hover:bg-gray-50">Back</button>
+          style={{ padding: "8px 16px", fontSize: 13, border: "1px solid var(--color-border)", borderRadius: 8, backgroundColor: "var(--color-surface)", color: "var(--color-text-secondary)", cursor: current === 0 ? "not-allowed" : "pointer", opacity: current === 0 ? 0.4 : 1 }}>
+          Back
+        </button>
         <button onClick={() => setCurrent(c => Math.min(steps.length - 1, c + 1))} disabled={current === steps.length - 1}
-          className="px-4 py-2 text-sm bg-indigo-600 text-white rounded-lg disabled:opacity-40 hover:bg-indigo-700">Next</button>
+          style={{ padding: "8px 16px", fontSize: 13, border: "none", borderRadius: 8, backgroundColor: "var(--color-accent)", color: "#fff", cursor: current === steps.length - 1 ? "not-allowed" : "pointer", opacity: current === steps.length - 1 ? 0.4 : 1 }}>
+          Next
+        </button>
       </div>
     </div>
   );

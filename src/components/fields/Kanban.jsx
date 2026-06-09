@@ -1,9 +1,14 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 const initial = {
-  Todo:       [{ id: 1, title: "Design mockups" }, { id: 2, title: "Write specs" }],
+  Todo: [{ id: 1, title: "Design mockups" }, { id: 2, title: "Write specs" }],
   "In Progress": [{ id: 3, title: "Build API" }, { id: 4, title: "Setup DB" }],
-  Done:       [{ id: 5, title: "Project setup" }],
+  Done: [{ id: 5, title: "Project setup" }],
+};
+const colColors = {
+  Todo: "var(--color-bg-muted)",
+  "In Progress": "var(--color-accent-subtle)",
+  Done: "var(--color-success-subtle)",
 };
 export default function Kanban({ label = "Kanban Board" }) {
   const [cols, setCols] = useState(initial);
@@ -19,28 +24,29 @@ export default function Kanban({ label = "Kanban Board" }) {
     }));
     setDrag(null);
   };
-  const colors = { Todo: "bg-gray-100", "In Progress": "bg-blue-50", Done: "bg-green-50" };
   return (
-    <div>
-      <p className="text-sm font-medium text-gray-700 mb-3">{label}</p>
-      <div className="flex gap-3 overflow-x-auto pb-2">
+    <div style={{ fontFamily: "sans-serif" }}>
+      <p style={{ fontSize: 13, fontWeight: 500, color: "var(--color-text-secondary)", marginBottom: 12 }}>{label}</p>
+      <div style={{ display: "flex", gap: 12, overflowX: "auto", paddingBottom: 8 }}>
         {Object.entries(cols).map(([col, cards]) => (
           <div key={col} onDragOver={e => e.preventDefault()} onDrop={() => onDrop(col)}
-            className={`${colors[col]} rounded-2xl p-3 min-w-48 flex-1`}>
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-xs font-semibold text-gray-600 uppercase">{col}</span>
-              <span className="text-xs bg-white rounded-full w-5 h-5 flex items-center justify-center font-bold text-gray-500">{cards.length}</span>
+            style={{ backgroundColor: colColors[col], borderRadius: 16, padding: 12, minWidth: 192, flex: 1 }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+              <span style={{ fontSize: 11, fontWeight: 700, color: "var(--color-text-muted)", textTransform: "uppercase" }}>{col}</span>
+              <span style={{ fontSize: 11, backgroundColor: "var(--color-surface)", borderRadius: "50%", width: 20, height: 20, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, color: "var(--color-text-muted)" }}>{cards.length}</span>
             </div>
-            <div className="space-y-2">
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               {cards.map(card => (
                 <div key={card.id} draggable onDragStart={() => onDragStart(col, card.id)}
-                  className="bg-white rounded-xl p-3 shadow-sm text-sm text-gray-700 cursor-grab active:cursor-grabbing hover:shadow-md transition">
+                  style={{ backgroundColor: "var(--color-surface)", borderRadius: 12, padding: 12, fontSize: 13, color: "var(--color-text-secondary)", cursor: "grab", boxShadow: "var(--shadow-sm)", transition: "box-shadow 0.15s" }}>
                   {card.title}
                 </div>
               ))}
             </div>
             <button onClick={() => setCols(prev => ({ ...prev, [col]: [...prev[col], { id: Date.now(), title: "New task" }] }))}
-              className="mt-2 w-full text-xs text-gray-400 hover:text-gray-600 py-1 border border-dashed rounded-lg">+ Add</button>
+              style={{ marginTop: 8, width: "100%", fontSize: 12, color: "var(--color-text-muted)", padding: "4px 0", border: "1px dashed var(--color-border)", borderRadius: 8, backgroundColor: "transparent", cursor: "pointer" }}>
+              + Add
+            </button>
           </div>
         ))}
       </div>

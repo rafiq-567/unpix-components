@@ -17,10 +17,10 @@ export default function CollapsableBig({
   return (
     <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
       <div style={{
-        border: '1px solid #e5e7eb',
+        border: '1px solid var(--color-border)',
         borderRadius: 12,
         overflow: 'hidden',
-        boxShadow: open ? '0 4px 12px rgba(0,0,0,0.06)' : 'none',
+        boxShadow: open ? 'var(--shadow-sm)' : 'none',
         transition: 'box-shadow 0.2s',
       }}>
         <button
@@ -28,7 +28,7 @@ export default function CollapsableBig({
           style={{
             width: '100%', padding: '20px 24px',
             display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-            background: open ? '#f8faff' : 'var(--color-surface)', border: 'none', cursor: 'pointer', textAlign: 'left',
+            background: open ? 'var(--color-bg-subtle)' : 'var(--color-surface)', border: 'none', cursor: 'pointer', textAlign: 'left',
             borderLeft: `4px solid ${open ? accentColor : 'var(--color-border)'}`,
             transition: 'all 0.2s',
           }}
@@ -39,7 +39,7 @@ export default function CollapsableBig({
               {badge && (
                 <span style={{
                   fontSize: 11, fontWeight: 600, padding: '2px 8px', borderRadius: 9999,
-                  backgroundColor: `${accentColor}18`, color: accentColor,
+                  backgroundColor: 'var(--color-accent-subtle)', color: accentColor,
                 }}>{badge}</span>
               )}
             </div>
@@ -57,9 +57,9 @@ export default function CollapsableBig({
         {open && (
           <div style={{
             padding: '20px 24px',
-            borderTop: '1px solid #f3f4f6',
+            borderTop: '1px solid var(--color-border)',
             fontSize: 14, color: 'var(--color-text-secondary)', lineHeight: 1.7,
-            backgroundColor: '#fafbff',
+            backgroundColor: 'var(--color-bg-subtle)',
           }}>
             {content}
           </div>

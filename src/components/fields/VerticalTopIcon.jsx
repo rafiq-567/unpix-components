@@ -4,18 +4,24 @@ const tabs = [{ icon: "🏠", label: "Home" }, { icon: "📊", label: "Stats" },
 export default function VerticalTopIcon({ label = "Vertical Top Icon" }) {
   const [active, setActive] = useState(0);
   return (
-    <div>
-      <p className="text-sm font-medium text-gray-700 mb-2">{label}</p>
-      <div className="flex gap-3">
-        <div className="flex flex-col gap-1 border-r pr-2">
+    <div style={{ fontFamily: "sans-serif" }}>
+      <p style={{ fontSize: 13, fontWeight: 500, color: "var(--color-text-secondary)", marginBottom: 8 }}>{label}</p>
+      <div style={{ display: "flex", gap: 12 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 4, borderRight: "1px solid var(--color-border)", paddingRight: 8 }}>
           {tabs.map((tab, i) => (
-            <button key={tab.label} onClick={() => setActive(i)}
-              className={`flex flex-col items-center gap-1 px-4 py-2 rounded-xl text-xs transition ${active === i ? "bg-indigo-50 text-indigo-600" : "text-gray-500 hover:bg-gray-50"}`}>
-              <span className="text-base">{tab.icon}</span><span>{tab.label}</span>
+            <button key={tab.label} onClick={() => setActive(i)} style={{
+              display: "flex", flexDirection: "column", alignItems: "center", gap: 4, padding: "8px 16px",
+              border: "none", borderRadius: 12, cursor: "pointer", fontSize: 11, transition: "all 0.15s",
+              backgroundColor: active === i ? "var(--color-accent-subtle)" : "transparent",
+              color: active === i ? "var(--color-accent-text)" : "var(--color-text-muted)",
+            }}>
+              <span style={{ fontSize: 16 }}>{tab.icon}</span><span>{tab.label}</span>
             </button>
           ))}
         </div>
-        <div className="flex-1 text-sm text-gray-600 flex items-center">{tabs[active].label} Content</div>
+        <div style={{ flex: 1, fontSize: 13, color: "var(--color-text-muted)", display: "flex", alignItems: "center" }}>
+          {tabs[active].label} Content
+        </div>
       </div>
     </div>
   );

@@ -30,10 +30,10 @@ export default function RatingField({
   const px = sizes[size] || 24;
 
   const icons = {
-    star:    (filled) => filled ? '★' : '☆',
-    heart:   (filled) => filled ? '♥' : '♡',
-    thumb:   (filled) => filled ? '👍' : '👍',
-    circle:  (filled) => filled ? '●' : '○',
+    star:   (filled) => filled ? '★' : '☆',
+    heart:  (filled) => filled ? '♥' : '♡',
+    thumb:  (filled) => filled ? '👍' : '👍',
+    circle: (filled) => filled ? '●' : '○',
   };
 
   const getIcon = icons[icon] || icons.star;
@@ -81,20 +81,12 @@ export default function RatingField({
 }
 
 RatingField.propTypes = {
-  /** Field label */
   label: PropTypes.string,
-  /** Initial rating value */
   defaultValue: PropTypes.number,
-  /** Maximum rating */
   max: PropTypes.number,
-  /** Star size */
   size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl']),
-  /** Disable interaction */
   readOnly: PropTypes.bool,
-  /** Show numeric value */
   showValue: PropTypes.bool,
-  /** Star color */
   color: PropTypes.oneOf(['amber', 'orange', 'red', 'blue', 'purple']),
-  /** Icon shape */
   icon: PropTypes.oneOf(['star', 'heart', 'circle']),
 };

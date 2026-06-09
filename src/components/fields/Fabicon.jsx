@@ -13,11 +13,11 @@ export default function FabIcon({
   shape = 'circle',
 }) {
   const colors = {
-    primary: { bg: 'var(--color-accent)', hover: 'var(--color-accent-hover)', text: 'var(--color-surface)' },
-    secondary: { bg: 'var(--color-text-muted)', hover: 'var(--color-text-secondary)', text: 'var(--color-surface)' },
-    success:  { bg: 'var(--color-success)', hover: 'var(--color-success-text)', text: 'var(--color-surface)' },
-    danger:   { bg: 'var(--color-danger)', hover: 'var(--color-danger-text)', text: 'var(--color-surface)' },
-    warning:  { bg: 'var(--color-warning)', hover: 'var(--color-warning-text)', text: 'var(--color-surface)' },
+    primary: { bg: 'var(--color-accent)', text: 'var(--color-surface)' },
+    secondary: { bg: 'var(--color-text-muted)', text: 'var(--color-surface)' },
+    success:  { bg: 'var(--color-success)', text: 'var(--color-surface)' },
+    danger:   { bg: 'var(--color-danger)', text: 'var(--color-surface)' },
+    warning:  { bg: 'var(--color-warning)', text: 'var(--color-surface)' },
   };
 
   const sizes = { sm: 40, md: 56, lg: 72 };
@@ -44,7 +44,7 @@ export default function FabIcon({
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           fontSize: px * 0.4,
           fontWeight: 300,
-          boxShadow: disabled ? 'none' : '0 4px 14px rgba(0,0,0,0.25)',
+          boxShadow: disabled ? 'none' : 'var(--shadow-lg)',
           transition: 'all 0.2s',
         }}
       >

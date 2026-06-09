@@ -41,7 +41,7 @@ export default function AgeSelect({
         style={{
           width: '100%', height: h,
           padding: '0 12px',
-          border: '1px solid #d1d5db',
+          border: '1px solid var(--color-border)',
           borderRadius: 8,
           fontSize: 13,
           color: value ? 'var(--color-text-secondary)' : 'var(--color-text-placeholder)',
@@ -56,7 +56,7 @@ export default function AgeSelect({
         }}
       >
         {ageRanges.map(opt => (
-          <option key={opt.value} value={opt.value}>{opt.label}</option>
+          <option key={opt.value} value={opt.value} style={{ background: 'var(--color-surface)', color: 'var(--color-text-secondary)' }}>{opt.label}</option>
         ))}
       </select>
     </div>

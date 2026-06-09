@@ -101,22 +101,13 @@ export default function ProgressBarField({
 }
 
 ProgressBarField.propTypes = {
-  /** Field label */
   label: PropTypes.string,
-  /** Current value */
   value: PropTypes.number,
-  /** Maximum value */
   max: PropTypes.number,
-  /** Color strategy: default uses color prop, auto changes color by threshold */
   variant: PropTypes.oneOf(['default', 'auto']),
-  /** Bar height */
   size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl']),
-  /** Show percentage label */
   showValue: PropTypes.bool,
-  /** Label position */
   valuePosition: PropTypes.oneOf(['right', 'top', 'bottom', 'inside']),
-  /** Enable shimmer animation */
   animated: PropTypes.bool,
-  /** Bar color */
   color: PropTypes.oneOf(['blue', 'green', 'red', 'amber', 'purple', 'gray']),
 };

@@ -14,6 +14,7 @@ export default function ColorWithColorCode({
   const [selected, setSelected] = useState(defaultValue);
 
   const hexToRgb = (hex) => {
+    if (hex.startsWith('var(')) return 'Dynamic Theme Color';
     const r = parseInt(hex.slice(1,3),16);
     const g = parseInt(hex.slice(3,5),16);
     const b = parseInt(hex.slice(5,7),16);
@@ -24,7 +25,7 @@ export default function ColorWithColorCode({
     <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
       {label && <label style={{ display: 'block', marginBottom: 10, fontSize: 13, fontWeight: 500, color: 'var(--color-text-secondary)' }}>{label}</label>}
       <div style={{
-        border: '1px solid #e5e7eb', borderRadius: 10, padding: 14,
+        border: '1px solid var(--color-border)', borderRadius: 10, padding: 14,
         backgroundColor: 'var(--color-surface)', display: 'inline-block',
       }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 14 }}>
@@ -36,7 +37,7 @@ export default function ColorWithColorCode({
               style={{
                 width: 28, height: 28, borderRadius: 6,
                 backgroundColor: color, border: 'none', cursor: 'pointer',
-                outline: selected === color ? `3px solid ${color}` : '2px solid transparent',
+                outline: selected === color ? `3px solid ${color.startsWith('var(') ? 'var(--color-accent)' : color}` : '2px solid transparent',
                 outlineOffset: 2,
                 transform: selected === color ? 'scale(1.15)' : 'scale(1)',
                 transition: 'all 0.15s',
@@ -48,7 +49,7 @@ export default function ColorWithColorCode({
           <div style={{
             width: 40, height: 40, borderRadius: 8,
             backgroundColor: selected,
-            border: '1px solid rgba(0,0,0,0.1)',
+            border: '1px solid var(--color-border)',
             flexShrink: 0,
           }} />
           <div>

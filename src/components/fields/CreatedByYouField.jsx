@@ -6,35 +6,40 @@ export default function CreatedByYouField({ label }) {
   const [tab, setTab] = useState("pending");
   const items = tab === "pending" ? pending : completed;
   return (
-    <div className="border rounded-xl p-4 bg-white">
-      <div className="flex items-center justify-between mb-3">
-        <h3 className="font-semibold text-gray-800">{label || "Created by you"}</h3>
-        <select className="text-xs border rounded px-2 py-1 text-gray-500">
+    <div style={{ border: "1px solid var(--color-border)", borderRadius: 12, padding: 16, backgroundColor: "var(--color-surface)" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
+        <h3 style={{ fontWeight: 600, color: "var(--color-text-primary)", margin: 0 }}>{label}</h3>
+        <select style={{ fontSize: 12, border: "1px solid var(--color-border)", borderRadius: 6, padding: "2px 8px", color: "var(--color-text-muted)", backgroundColor: "var(--color-surface)" }}>
           <option>All time</option><option>This week</option><option>This month</option>
         </select>
       </div>
-      <div className="flex rounded-lg overflow-hidden mb-4 bg-gray-100 p-0.5 gap-0.5">
-        <button type="button" onClick={() => setTab("pending")}
-          className={`flex-1 py-1.5 text-xs font-medium rounded-md transition-all ${tab === "pending" ? "bg-white text-gray-800 shadow-sm" : "text-gray-400"}`}>
-          Pending
-        </button>
-        <button type="button" onClick={() => setTab("completed")}
-          className={`flex-1 py-1.5 text-xs font-medium rounded-md transition-all ${tab === "completed" ? "bg-white text-gray-800 shadow-sm" : "text-gray-400"}`}>
-          Marked completed
-        </button>
+      <div style={{ display: "flex", borderRadius: 8, overflow: "hidden", marginBottom: 16, backgroundColor: "var(--color-bg-muted)", padding: 2, gap: 2 }}>
+        {["pending", "completed"].map((t) => (
+          <button key={t} type="button" onClick={() => setTab(t)}
+            style={{
+              flex: 1, padding: "6px 0", fontSize: 12, fontWeight: 500, border: "none", cursor: "pointer", borderRadius: 6, transition: "all 0.15s",
+              backgroundColor: tab === t ? "var(--color-surface)" : "transparent",
+              color: tab === t ? "var(--color-text-primary)" : "var(--color-text-muted)",
+              boxShadow: tab === t ? "var(--shadow-sm)" : "none",
+            }}>
+            {t === "pending" ? "Pending" : "Marked completed"}
+          </button>
+        ))}
       </div>
-      <div className="space-y-3">
+      <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
         {items.map((issue) => (
-          <div key={issue.id} className="flex items-center gap-3 text-sm">
+          <div key={issue.id} style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 13 }}>
             <span>{issue.icon}</span>
-            <span className="text-gray-400 text-xs">{issue.id}</span>
-            <span className="text-gray-700 flex-1 truncate">{issue.title}</span>
-            <span className="text-xs text-gray-400 w-16 text-center">{issue.dueDate}</span>
-            <span className="text-xs text-gray-400 w-16 text-center">{issue.assignedTo}</span>
+            <span style={{ color: "var(--color-text-muted)", fontSize: 12 }}>{issue.id}</span>
+            <span style={{ color: "var(--color-text-secondary)", flex: 1 }}>{issue.title}</span>
+            <span style={{ color: "var(--color-text-muted)", fontSize: 12, width: 64, textAlign: "center" }}>{issue.dueDate}</span>
+            <span style={{ color: "var(--color-text-muted)", fontSize: 12, width: 64, textAlign: "center" }}>{issue.assignedTo}</span>
           </div>
         ))}
       </div>
-      <button className="mt-4 text-xs text-indigo-500 w-full text-center">View all issues</button>
+      <button style={{ marginTop: 16, fontSize: 12, color: "var(--color-accent)", width: "100%", textAlign: "center", background: "none", border: "none", cursor: "pointer" }}>
+        View all issues
+      </button>
     </div>
   );
 }

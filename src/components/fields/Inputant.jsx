@@ -23,9 +23,9 @@ export default function InputAnt({
   const [focused, setFocused] = useState(false);
 
   const statusColors = {
-    default: focused ? '#1677ff' : '#d9d9d9',
-    error:   '#ff4d4f',
-    warning: '#faad14',
+    default: focused ? 'var(--color-accent)' : 'var(--color-border)',
+    error:   'var(--color-danger)',
+    warning: 'var(--color-warning)',
   };
 
   const heights = { sm: 28, md: 36, lg: 44 };
@@ -33,26 +33,26 @@ export default function InputAnt({
 
   return (
     <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
-      {label && <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: 'rgba(0,0,0,0.88)', fontWeight: 500 }}>{label}</label>}
+      {label && <label style={{ display: 'block', marginBottom: 6, fontSize: 13, color: 'var(--color-text-primary)', fontWeight: 500 }}>{label}</label>}
       <div style={{ display: 'flex', alignItems: 'stretch' }}>
         {addonBefore && (
           <div style={{
-            padding: '0 11px', backgroundColor: 'rgba(0,0,0,0.02)',
+            padding: '0 11px', backgroundColor: 'var(--color-bg-subtle)',
             border: `1px solid ${statusColors[status]}`, borderRight: 'none',
             borderRadius: '6px 0 0 6px', display: 'flex', alignItems: 'center',
-            fontSize: 13, color: 'rgba(0,0,0,0.45)', whiteSpace: 'nowrap',
+            fontSize: 13, color: 'var(--color-text-muted)', whiteSpace: 'nowrap',
           }}>{addonBefore}</div>
         )}
         <div style={{
           flex: 1, display: 'flex', alignItems: 'center',
           border: `1px solid ${statusColors[status]}`,
           borderRadius: addonBefore && addonAfter ? 0 : addonBefore ? '0 6px 6px 0' : addonAfter ? '6px 0 0 6px' : '6px',
-          backgroundColor: disabled ? 'rgba(0,0,0,0.04)' : 'var(--color-surface)',
+          backgroundColor: disabled ? 'var(--color-bg-subtle)' : 'var(--color-surface)',
           padding: '0 11px', height: h, gap: 8,
-          boxShadow: focused ? `0 0 0 2px ${statusColors[status]}22` : 'none',
+          boxShadow: focused ? `0 0 0 2px var(--color-accent-subtle)` : 'none',
           transition: 'all 0.2s',
         }}>
-          {prefix && <span style={{ color: 'rgba(0,0,0,0.45)', fontSize: 13, flexShrink: 0 }}>{prefix}</span>}
+          {prefix && <span style={{ color: 'var(--color-text-placeholder)', fontSize: 13, flexShrink: 0 }}>{prefix}</span>}
           <input
             value={value}
             onChange={e => setValue(e.target.value)}
@@ -63,27 +63,27 @@ export default function InputAnt({
             maxLength={maxLength || undefined}
             style={{
               flex: 1, border: 'none', outline: 'none',
-              fontSize: 13, color: 'rgba(0,0,0,0.88)',
+              fontSize: 13, color: 'var(--color-text-secondary)',
               backgroundColor: 'transparent',
               cursor: disabled ? 'not-allowed' : 'text',
             }}
           />
           {allowClear && value && (
-            <button onClick={() => setValue('')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'rgba(0,0,0,0.25)', fontSize: 14, padding: 0 }}>✕</button>
+            <button onClick={() => setValue('')} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-text-placeholder)', fontSize: 14, padding: 0 }}>✕</button>
           )}
-          {suffix && <span style={{ color: 'rgba(0,0,0,0.45)', fontSize: 13, flexShrink: 0 }}>{suffix}</span>}
+          {suffix && <span style={{ color: 'var(--color-text-placeholder)', fontSize: 13, flexShrink: 0 }}>{suffix}</span>}
         </div>
         {addonAfter && (
           <div style={{
-            padding: '0 11px', backgroundColor: 'rgba(0,0,0,0.02)',
+            padding: '0 11px', backgroundColor: 'var(--color-bg-subtle)',
             border: `1px solid ${statusColors[status]}`, borderLeft: 'none',
             borderRadius: '0 6px 6px 0', display: 'flex', alignItems: 'center',
-            fontSize: 13, color: 'rgba(0,0,0,0.45)', whiteSpace: 'nowrap',
+            fontSize: 13, color: 'var(--color-text-muted)', whiteSpace: 'nowrap',
           }}>{addonAfter}</div>
         )}
       </div>
       {showCount && maxLength > 0 && (
-        <div style={{ textAlign: 'right', marginTop: 4, fontSize: 11, color: 'rgba(0,0,0,0.45)' }}>
+        <div style={{ textAlign: 'right', marginTop: 4, fontSize: 11, color: 'var(--color-text-placeholder)' }}>
           {value.length} / {maxLength}
         </div>
       )}

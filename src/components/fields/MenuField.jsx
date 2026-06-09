@@ -34,7 +34,7 @@ export default function MenuField({
           onClick={() => setOpen(!open)}
           style={{
             padding: '8px 14px',
-            border: '1px solid #d1d5db',
+            border: '1px solid var(--color-border)',
             borderRadius: 8,
             background: open ? 'var(--color-bg-subtle)' : 'var(--color-surface)',
             cursor: 'pointer',
@@ -60,9 +60,9 @@ export default function MenuField({
             position: 'absolute',
             ...placements[placement],
             backgroundColor: 'var(--color-surface)',
-            border: '1px solid #e5e7eb',
+            border: '1px solid var(--color-border)',
             borderRadius: 8,
-            boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
+            boxShadow: 'var(--shadow-lg)',
             minWidth: 180,
             zIndex: 200,
             overflow: 'hidden',
@@ -70,7 +70,7 @@ export default function MenuField({
           }}>
             {items.map((item, i) =>
               item.divider ? (
-                <div key={i} style={{ height: 1, backgroundColor: 'var(--color-bg-muted)', margin: '4px 0' }} />
+                <div key={i} style={{ height: 1, backgroundColor: 'var(--color-border)', margin: '4px 0' }} />
               ) : (
                 <button
                   key={i}
@@ -90,7 +90,7 @@ export default function MenuField({
                     opacity: item.disabled ? 0.5 : 1,
                     transition: 'background 0.1s',
                   }}
-                  onMouseEnter={e => { if (!item.disabled) e.target.style.backgroundColor = item.danger ? 'var(--color-danger-subtle)' : 'var(--color-bg-subtle)'; }}
+                  onMouseEnter={e => { if (!item.disabled) e.target.style.backgroundColor = item.danger ? 'var(--color-danger-subtle)' : 'var(--color-bg-hover)'; }}
                   onMouseLeave={e => { e.target.style.backgroundColor = 'transparent'; }}
                 >
                   {item.icon && <span style={{ fontSize: 14 }}>{item.icon}</span>}
@@ -109,9 +109,7 @@ export default function MenuField({
 }
 
 MenuField.propTypes = {
-  /** Text on the trigger button */
   triggerLabel: PropTypes.string,
-  /** Menu items */
   items: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.string,
     icon: PropTypes.string,
@@ -120,8 +118,6 @@ MenuField.propTypes = {
     danger: PropTypes.bool,
     divider: PropTypes.bool,
   })),
-  /** Dropdown placement */
   placement: PropTypes.oneOf(['bottom-start', 'bottom-end', 'top-start', 'top-end']),
-  /** Start in open state */
   defaultOpen: PropTypes.bool,
 };

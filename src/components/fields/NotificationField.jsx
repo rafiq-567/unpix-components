@@ -30,7 +30,7 @@ export default function NotificationField({
             position: 'relative',
             width: 40, height: 40,
             borderRadius: 8,
-            border: '1px solid #e5e7eb',
+            border: '1px solid var(--color-border)',
             background: open ? 'var(--color-bg-subtle)' : 'var(--color-surface)',
             cursor: 'pointer',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -51,7 +51,7 @@ export default function NotificationField({
               height: 16,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               padding: '0 4px',
-              border: '2px solid #fff',
+              border: '2px solid var(--color-surface)',
             }}>{unread > 9 ? '9+' : unread}</span>
           )}
         </button>
@@ -64,15 +64,15 @@ export default function NotificationField({
             marginTop: 4,
             width: 320,
             backgroundColor: 'var(--color-surface)',
-            border: '1px solid #e5e7eb',
+            border: '1px solid var(--color-border)',
             borderRadius: 12,
-            boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+            boxShadow: 'var(--shadow-lg)',
             zIndex: 300,
             overflow: 'hidden',
           }}>
             <div style={{
               display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-              padding: '12px 16px', borderBottom: '1px solid #f3f4f6',
+              padding: '12px 16px', borderBottom: '1px solid var(--color-border)',
             }}>
               <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)' }}>Notifications</span>
               {unread > 0 && (
@@ -91,16 +91,19 @@ export default function NotificationField({
                 <div key={n.id} style={{
                   display: 'flex', gap: 12, padding: '12px 16px',
                   backgroundColor: n.read ? 'var(--color-surface)' : 'var(--color-accent-subtle)',
-                  borderBottom: '1px solid #f3f4f6',
+                  borderBottom: '1px solid var(--color-border)',
                   cursor: 'pointer',
                   transition: 'background 0.1s',
-                }}>
+                }}
+                onMouseEnter={e => e.currentTarget.style.backgroundColor = n.read ? 'var(--color-bg-hover)' : 'var(--color-accent-subtle)'}
+                onMouseLeave={e => e.currentTarget.style.backgroundColor = n.read ? 'var(--color-surface)' : 'var(--color-accent-subtle)'}
+                >
                   <div style={{
                     width: 36, height: 36, borderRadius: '50%',
                     backgroundColor: 'var(--color-bg-muted)', flexShrink: 0,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     fontSize: n.avatar.length > 2 ? 18 : 12,
-                    fontWeight: 600, color: '#475569',
+                    fontWeight: 600, color: 'var(--color-text-muted)',
                   }}>{n.avatar}</div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <p style={{ margin: '0 0 2px', fontSize: 13, color: 'var(--color-text-secondary)', fontWeight: n.read ? 400 : 500, lineHeight: 1.4 }}>{n.title}</p>
@@ -120,9 +123,7 @@ export default function NotificationField({
 }
 
 NotificationField.propTypes = {
-  /** Badge count (cosmetic, overridden by actual unread count) */
   count: PropTypes.number,
-  /** Array of notification items */
   notifications: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
     title: PropTypes.string,
@@ -130,6 +131,5 @@ NotificationField.propTypes = {
     read: PropTypes.bool,
     avatar: PropTypes.string,
   })),
-  /** Start in open state */
   defaultOpen: PropTypes.bool,
 };

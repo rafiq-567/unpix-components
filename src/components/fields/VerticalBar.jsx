@@ -4,18 +4,22 @@ const tabs = ["Dashboard", "Users", "Products", "Orders", "Reports"];
 export default function VerticalBar({ label = "Vertical Bar Tabs" }) {
   const [active, setActive] = useState(0);
   return (
-    <div>
-      <p className="text-sm font-medium text-gray-700 mb-2">{label}</p>
-      <div className="flex gap-4">
-        <div className="flex flex-col gap-1">
+    <div style={{ fontFamily: "sans-serif" }}>
+      <p style={{ fontSize: 13, fontWeight: 500, color: "var(--color-text-secondary)", marginBottom: 8 }}>{label}</p>
+      <div style={{ display: "flex", gap: 16 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
           {tabs.map((tab, i) => (
-            <button key={tab} onClick={() => setActive(i)}
-              className={`px-4 py-2 text-sm text-left rounded-lg transition ${active === i ? "bg-indigo-600 text-white" : "text-gray-500 hover:bg-gray-100"}`}>
-              {tab}
-            </button>
+            <button key={tab} onClick={() => setActive(i)} style={{
+              padding: "8px 16px", border: "none", borderRadius: 8, cursor: "pointer", fontSize: 13, textAlign: "left", transition: "all 0.15s",
+              backgroundColor: active === i ? "var(--color-accent)" : "transparent",
+              color: active === i ? "#fff" : "var(--color-text-muted)",
+              fontWeight: active === i ? 600 : 400,
+            }}>{tab}</button>
           ))}
         </div>
-        <div className="flex-1 border-l pl-4 text-sm text-gray-600 flex items-start pt-2">Content for {tabs[active]}</div>
+        <div style={{ flex: 1, borderLeft: "1px solid var(--color-border)", paddingLeft: 16, fontSize: 13, color: "var(--color-text-muted)", display: "flex", alignItems: "flex-start", paddingTop: 8 }}>
+          Content for {tabs[active]}
+        </div>
       </div>
     </div>
   );

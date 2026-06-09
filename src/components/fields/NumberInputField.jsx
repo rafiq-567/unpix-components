@@ -27,59 +27,97 @@ export default function NumberInputField({
     md: { height: 40, font: 14, btnW: 36 },
     lg: { height: 48, font: 15, btnW: 44 },
   };
+
   const s = sizes[size] || sizes.md;
 
-  const btnStyle = (disabled) => ({
+  const btnStyle = (isDisabled) => ({
     width: s.btnW,
     height: s.height,
-    border: '1px solid #d1d5db',
-    background: disabled ? 'var(--color-bg-subtle)' : 'var(--color-surface)',
-    cursor: disabled ? 'not-allowed' : 'pointer',
+    border: '1px solid var(--color-border-strong)',
+    background: isDisabled
+      ? 'var(--color-bg-subtle)'
+      : 'var(--color-surface)',
+    cursor: isDisabled ? 'not-allowed' : 'pointer',
     fontSize: 18,
-    color: disabled ? 'var(--color-text-disabled)' : 'var(--color-text-secondary)',
+    color: isDisabled
+      ? 'var(--color-text-disabled)'
+      : 'var(--color-text-secondary)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     flexShrink: 0,
-    transition: 'background 0.1s',
+    transition: 'all 0.2s ease',
   });
 
   return (
-    <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
+    <div style={{ padding: 16, fontFamily: 'inherit' }}>
       {label && (
-        <label style={{ display: 'block', marginBottom: 8, fontSize: 13, fontWeight: 500, color: 'var(--color-text-secondary)' }}>
+        <label
+          style={{
+            display: 'block',
+            marginBottom: 8,
+            fontSize: 13,
+            fontWeight: 500,
+            color: 'var(--color-text-secondary)',
+          }}
+        >
           {label}
         </label>
       )}
-      <div style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        border: '1px solid #d1d5db',
-        borderRadius: 8,
-        overflow: 'hidden',
-        opacity: disabled ? 0.6 : 1,
-      }}>
+
+      <div
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          border: '1px solid var(--color-border-strong)',
+          borderRadius: 'var(--radius-md)',
+          overflow: 'hidden',
+          opacity: disabled ? 0.6 : 1,
+          backgroundColor: 'var(--color-surface)',
+        }}
+      >
         <button
           onClick={() => change(-step)}
           disabled={disabled || value <= min}
-          style={{ ...btnStyle(disabled || value <= min), borderRadius: '8px 0 0 8px', borderRight: 'none' }}
-        >−</button>
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          borderLeft: '1px solid #d1d5db',
-          borderRight: '1px solid #d1d5db',
-          height: s.height,
-          padding: '0 12px',
-          gap: 4,
-          minWidth: 60,
-          justifyContent: 'center',
-          fontSize: s.font,
-          color: 'var(--color-text-secondary)',
-          fontWeight: 500,
-          backgroundColor: disabled ? 'var(--color-bg-subtle)' : 'var(--color-surface)',
-        }}>
-          {prefix && <span style={{ color: 'var(--color-text-placeholder)', fontSize: s.font - 1 }}>{prefix}</span>}
+          style={{
+            ...btnStyle(disabled || value <= min),
+            borderRadius: '8px 0 0 8px',
+            borderRight: 'none',
+          }}
+        >
+          −
+        </button>
+
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            borderLeft: '1px solid var(--color-border-strong)',
+            borderRight: '1px solid var(--color-border-strong)',
+            height: s.height,
+            padding: '0 12px',
+            gap: 4,
+            minWidth: 60,
+            justifyContent: 'center',
+            fontSize: s.font,
+            color: 'var(--color-text-primary)',
+            fontWeight: 500,
+            backgroundColor: disabled
+              ? 'var(--color-bg-subtle)'
+              : 'var(--color-surface)',
+          }}
+        >
+          {prefix && (
+            <span
+              style={{
+                color: 'var(--color-text-placeholder)',
+                fontSize: s.font - 1,
+              }}
+            >
+              {prefix}
+            </span>
+          )}
+
           <input
             type="number"
             value={value}
@@ -87,7 +125,7 @@ export default function NumberInputField({
             max={max}
             step={step}
             disabled={disabled}
-            onChange={e => {
+            onChange={(e) => {
               const v = Number(e.target.value);
               if (v >= min && v <= max) setValue(v);
             }}
@@ -98,41 +136,58 @@ export default function NumberInputField({
               textAlign: 'center',
               fontSize: s.font,
               fontWeight: 500,
-              color: 'var(--color-text-secondary)',
+              color: 'var(--color-text-primary)',
               background: 'transparent',
               MozAppearance: 'textfield',
             }}
           />
-          {suffix && <span style={{ color: 'var(--color-text-placeholder)', fontSize: s.font - 1 }}>{suffix}</span>}
+
+          {suffix && (
+            <span
+              style={{
+                color: 'var(--color-text-placeholder)',
+                fontSize: s.font - 1,
+              }}
+            >
+              {suffix}
+            </span>
+          )}
         </div>
+
         <button
           onClick={() => change(step)}
           disabled={disabled || value >= max}
-          style={{ ...btnStyle(disabled || value >= max), borderRadius: '0 8px 8px 0', borderLeft: 'none' }}
-        >+</button>
+          style={{
+            ...btnStyle(disabled || value >= max),
+            borderRadius: '0 8px 8px 0',
+            borderLeft: 'none',
+          }}
+        >
+          +
+        </button>
       </div>
-      <p style={{ margin: '4px 0 0', fontSize: 11, color: 'var(--color-text-placeholder)' }}>Min: {min} · Max: {max}</p>
+
+      <p
+        style={{
+          margin: '4px 0 0',
+          fontSize: 11,
+          color: 'var(--color-text-placeholder)',
+        }}
+      >
+        Min: {min} · Max: {max}
+      </p>
     </div>
   );
 }
 
 NumberInputField.propTypes = {
-  /** Field label */
   label: PropTypes.string,
-  /** Initial value */
   defaultValue: PropTypes.number,
-  /** Minimum allowed value */
   min: PropTypes.number,
-  /** Maximum allowed value */
   max: PropTypes.number,
-  /** Increment/decrement step */
   step: PropTypes.number,
-  /** Disable the input */
   disabled: PropTypes.bool,
-  /** Text shown before the value */
   prefix: PropTypes.string,
-  /** Text shown after the value */
   suffix: PropTypes.string,
-  /** Control size */
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
 };

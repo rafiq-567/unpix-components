@@ -39,7 +39,7 @@ export default function DefaultSelect({
         style={{
           width: '100%', height: h,
           padding: '0 12px',
-          border: '1px solid #d1d5db',
+          border: '1px solid var(--color-border)',
           borderRadius: 8,
           fontSize: 13,
           color: 'var(--color-text-secondary)',
@@ -55,7 +55,7 @@ export default function DefaultSelect({
         }}
       >
         {options.map(opt => (
-          <option key={opt.value} value={opt.value}>{opt.label}</option>
+          <option key={opt.value} value={opt.value} style={{ background: 'var(--color-surface)', color: 'var(--color-text-secondary)' }}>{opt.label}</option>
         ))}
       </select>
       {helperText && <p style={{ margin: '4px 0 0', fontSize: 11, color: 'var(--color-text-muted)' }}>{helperText}</p>}

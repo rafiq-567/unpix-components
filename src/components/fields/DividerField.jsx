@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 export default function DividerField({ label }) {
   return (
-    <div className="flex items-center gap-3">
-      <hr className="flex-1 border-gray-300" />
-      {label && <span className="text-xs text-gray-400">{label}</span>}
-      <hr className="flex-1 border-gray-300" />
+    <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+      <hr style={{ flex: 1, border: "none", borderTop: "1px solid var(--color-border)" }} />
+      {label && <span style={{ fontSize: 12, color: "var(--color-text-muted)" }}>{label}</span>}
+      <hr style={{ flex: 1, border: "none", borderTop: "1px solid var(--color-border)" }} />
     </div>
   );
 }

@@ -20,9 +20,9 @@ export default function Leaflet({ label = "Map", lat = 23.8103, lng = 90.4125, z
 
   if (!mounted || !MapComponents) {
     return (
-      <div>
-        <p className="text-sm font-medium text-gray-700 mb-2">{label}</p>
-        <div className="w-full bg-gray-100 rounded-xl border flex items-center justify-center text-gray-400 text-sm" style={{ aspectRatio: "16/9" }}>
+      <div className="font-sans">
+        <p className="text-sm font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
+        <div className="w-full bg-[var(--color-bg-subtle)] rounded-xl border border-[var(--color-border)] flex items-center justify-center text-[var(--color-text-placeholder)] text-sm" style={{ aspectRatio: "16/9" }}>
           Loading map...
         </div>
       </div>
@@ -32,10 +32,10 @@ export default function Leaflet({ label = "Map", lat = 23.8103, lng = 90.4125, z
   const { MapContainer, TileLayer, Marker, Popup } = MapComponents;
 
   return (
-    <div>
-      <p className="text-sm font-medium text-gray-700 mb-2">{label}</p>
-      <div className="relative w-full rounded-xl overflow-hidden border" style={{ aspectRatio: "16/9" }}>
-        <div className="absolute inset-0">
+    <div className="font-sans">
+      <p className="text-sm font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
+      <div className="relative w-full rounded-xl overflow-hidden border border-[var(--color-border)]" style={{ aspectRatio: "16/9" }}>
+        <div className="absolute inset-0 z-10">
           <MapContainer
             center={[lat, lng]}
             zoom={zoom}

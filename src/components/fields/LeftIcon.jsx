@@ -4,12 +4,16 @@ const tabs = [{ icon: "🏠", label: "Home" }, { icon: "📊", label: "Stats" },
 export default function LeftIcon({ label = "Left Icon Tabs" }) {
   const [active, setActive] = useState(0);
   return (
-    <div>
-      <p className="text-sm font-medium text-gray-700 mb-2">{label}</p>
-      <div className="flex border-b">
+    <div style={{ fontFamily: "sans-serif" }}>
+      <p style={{ fontSize: 13, fontWeight: 500, color: "var(--color-text-secondary)", marginBottom: 8 }}>{label}</p>
+      <div style={{ borderBottom: "1.5px solid var(--color-border)", display: "flex" }}>
         {tabs.map((tab, i) => (
-          <button key={tab.label} onClick={() => setActive(i)}
-            className={`flex items-center gap-2 px-4 py-2.5 text-sm border-b-2 transition ${active === i ? "border-indigo-600 text-indigo-600" : "border-transparent text-gray-500 hover:text-gray-700"}`}>
+          <button key={tab.label} onClick={() => setActive(i)} style={{
+            display: "flex", alignItems: "center", gap: 8, padding: "10px 16px",
+            border: "none", borderBottom: active === i ? "2px solid var(--color-accent)" : "2px solid transparent",
+            marginBottom: -1.5, background: "none", cursor: "pointer", fontSize: 13,
+            fontWeight: active === i ? 600 : 400, color: active === i ? "var(--color-accent-text)" : "var(--color-text-muted)", transition: "all 0.15s",
+          }}>
             <span>{tab.icon}</span>{tab.label}
           </button>
         ))}

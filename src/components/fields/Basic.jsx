@@ -4,17 +4,18 @@ export default function Basic({ label = "Basic Tabs" }) {
   const [tab, setTab] = useState(0);
   const tabs = ["Tab One", "Tab Two", "Tab Three"];
   return (
-    <div>
-      <p className="text-sm font-medium text-gray-700 mb-2">{label}</p>
-      <div className="border-b flex gap-0">
+    <div style={{ fontFamily: "sans-serif" }}>
+      <p style={{ fontSize: 13, fontWeight: 500, color: "var(--color-text-secondary)", marginBottom: 8 }}>{label}</p>
+      <div style={{ borderBottom: "1.5px solid var(--color-border)", display: "flex" }}>
         {tabs.map((t, i) => (
-          <button key={t} onClick={() => setTab(i)}
-            className={`px-5 py-2.5 text-sm font-medium border-b-2 transition ${tab === i ? "border-indigo-600 text-indigo-600" : "border-transparent text-gray-500 hover:text-gray-700"}`}>
-            {t}
-          </button>
+          <button key={t} onClick={() => setTab(i)} style={{
+            padding: "10px 20px", border: "none", borderBottom: tab === i ? "2px solid var(--color-accent)" : "2px solid transparent",
+            marginBottom: -1.5, background: "none", cursor: "pointer", fontSize: 13,
+            fontWeight: tab === i ? 600 : 400, color: tab === i ? "var(--color-accent-text)" : "var(--color-text-muted)", transition: "all 0.15s",
+          }}>{t}</button>
         ))}
       </div>
-      <div className="p-4 text-sm text-gray-600">Content for {tabs[tab]}</div>
+      <div style={{ padding: 16, fontSize: 13, color: "var(--color-text-muted)" }}>Content for {tabs[tab]}</div>
     </div>
   );
 }

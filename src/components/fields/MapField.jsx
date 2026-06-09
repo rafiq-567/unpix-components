@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 export default function MapField({ label = "Map", lat = 23.8103, lng = 90.4125, zoom = 13 }) {
-
   const [mounted, setMounted] = useState(false);
   const [MapComponents, setMapComponents] = useState(null);
   useEffect(() => {
@@ -16,15 +15,21 @@ export default function MapField({ label = "Map", lat = 23.8103, lng = 90.4125, 
       setMounted(true);
     });
   }, []);
+
   if (!mounted || !MapComponents) {
-    return <div className="w-full bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 text-sm" style={{ aspectRatio: "16/9" }}>Loading map...</div>;
+    return (
+      <div style={{ aspectRatio: "16/9", width: "100%", backgroundColor: "var(--color-bg-muted)", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, color: "var(--color-text-muted)" }}>
+        Loading map...
+      </div>
+    );
   }
+
   const { MapContainer, TileLayer, Marker, Popup } = MapComponents;
   return (
     <div>
-      <label className="block mb-2 text-sm font-medium text-gray-700">{label}</label>
-      <div className="relative w-full rounded-lg overflow-hidden border" style={{ aspectRatio: "16/9" }}>
-        <div className="absolute inset-0">
+      <label style={{ display: "block", marginBottom: 8, fontSize: 13, fontWeight: 500, color: "var(--color-text-secondary)" }}>{label}</label>
+      <div style={{ position: "relative", width: "100%", borderRadius: 12, overflow: "hidden", border: "1px solid var(--color-border)", aspectRatio: "16/9" }}>
+        <div style={{ position: "absolute", inset: 0 }}>
           <MapContainer center={[lat, lng]} zoom={zoom} style={{ height: "100%", width: "100%" }} scrollWheelZoom={false}>
             <TileLayer attribution='&copy; OpenStreetMap' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
             <Marker position={[lat, lng]}><Popup>{label}</Popup></Marker>

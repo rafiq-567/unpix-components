@@ -10,28 +10,34 @@ export default function Calendar({ label = "Calendar" }) {
   const today = new Date();
   const [selected, setSelected] = useState(null);
   const cells = [...Array(firstDay).fill(null), ...Array.from({ length: daysInMonth }, (_, i) => i + 1)];
+  const isToday = (day) => day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
   return (
-    <div className="border rounded-2xl overflow-hidden bg-white w-full max-w-sm">
-      <div className="flex items-center justify-between px-4 py-3 bg-indigo-600 text-white">
-        <button onClick={() => setDate(new Date(year, month - 1))} className="hover:bg-white/20 rounded-full w-8 h-8 flex items-center justify-center">‹</button>
-        <span className="font-semibold">{monthName} {year}</span>
-        <button onClick={() => setDate(new Date(year, month + 1))} className="hover:bg-white/20 rounded-full w-8 h-8 flex items-center justify-center">›</button>
+    <div style={{ border: "1px solid var(--color-border)", borderRadius: 16, overflow: "hidden", backgroundColor: "var(--color-surface)", maxWidth: 384, width: "100%", fontFamily: "sans-serif" }}>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 16px", backgroundColor: "var(--color-accent)" }}>
+        <button onClick={() => setDate(new Date(year, month - 1))} style={{ width: 32, height: 32, borderRadius: "50%", border: "none", background: "rgba(255,255,255,0.2)", color: "#fff", cursor: "pointer", fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center" }}>‹</button>
+        <span style={{ fontWeight: 600, color: "#fff" }}>{monthName} {year}</span>
+        <button onClick={() => setDate(new Date(year, month + 1))} style={{ width: 32, height: 32, borderRadius: "50%", border: "none", background: "rgba(255,255,255,0.2)", color: "#fff", cursor: "pointer", fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center" }}>›</button>
       </div>
-      <div className="grid grid-cols-7 bg-indigo-50">
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", backgroundColor: "var(--color-accent-subtle)" }}>
         {["Su","Mo","Tu","We","Th","Fr","Sa"].map(d => (
-          <div key={d} className="text-center text-xs font-semibold text-indigo-400 py-2">{d}</div>
+          <div key={d} style={{ textAlign: "center", fontSize: 11, fontWeight: 600, color: "var(--color-accent-text)", padding: "8px 0" }}>{d}</div>
         ))}
       </div>
-      <div className="grid grid-cols-7 p-2 gap-1">
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", padding: 8, gap: 4, backgroundColor: "var(--color-surface)" }}>
         {cells.map((day, i) => (
           <button key={i} onClick={() => day && setSelected(day)} disabled={!day}
-            className={`h-9 w-full rounded-xl text-sm transition ${!day ? "" : day === selected ? "bg-indigo-600 text-white font-bold" : day === today.getDate() && month === today.getMonth() && year === today.getFullYear() ? "bg-indigo-100 text-indigo-700 font-semibold" : "hover:bg-gray-100 text-gray-700"}`}>
+            style={{
+              height: 36, width: "100%", border: "none", borderRadius: 12, cursor: day ? "pointer" : "default",
+              fontSize: 13, transition: "all 0.15s", fontWeight: day === selected ? 700 : isToday(day) ? 600 : 400,
+              backgroundColor: day === selected ? "var(--color-accent)" : isToday(day) ? "var(--color-accent-subtle)" : "transparent",
+              color: day === selected ? "#fff" : isToday(day) ? "var(--color-accent-text)" : day ? "var(--color-text-secondary)" : "transparent",
+            }}>
             {day}
           </button>
         ))}
       </div>
       {selected && (
-        <div className="px-4 py-2 border-t text-xs text-center text-indigo-600 font-medium">
+        <div style={{ padding: "8px 16px", borderTop: "1px solid var(--color-border)", fontSize: 12, textAlign: "center", color: "var(--color-accent-text)", fontWeight: 500 }}>
           Selected: {monthName} {selected}, {year}
         </div>
       )}

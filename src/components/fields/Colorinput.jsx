@@ -24,7 +24,7 @@ export default function ColorInput({
       )}
       <div style={{
         display: 'inline-flex', alignItems: 'center', gap: 0,
-        border: '1px solid #d1d5db', borderRadius: 8, overflow: 'hidden',
+        border: '1px solid var(--color-border)', borderRadius: 8, overflow: 'hidden',
         width: '100%', height: h,
         backgroundColor: disabled ? 'var(--color-bg-subtle)' : 'var(--color-surface)',
         opacity: disabled ? 0.6 : 1,
@@ -35,12 +35,12 @@ export default function ColorInput({
         }}>
           <div style={{
             width: '100%', height: '100%',
-            backgroundColor: value,
-            borderRight: '1px solid #e5e7eb',
+            backgroundColor: value.startsWith('var(') ? value : value,
+            borderRight: '1px solid var(--color-border)',
           }} />
           <input
             type="color"
-            value={value}
+            value={value.startsWith('var(') ? '#3b82f6' : value}
             onChange={e => setValue(e.target.value)}
             disabled={disabled}
             style={{ position: 'absolute', opacity: 0, width: 0, height: 0 }}
@@ -49,10 +49,7 @@ export default function ColorInput({
         <input
           type="text"
           value={value}
-          onChange={e => {
-            const v = e.target.value;
-            if (/^#[0-9a-fA-F]{0,6}$/.test(v)) setValue(v);
-          }}
+          onChange={e => setValue(e.target.value)}
           disabled={disabled}
           placeholder="#000000"
           style={{
@@ -65,7 +62,7 @@ export default function ColorInput({
         <div style={{
           width: 8, height: 8, borderRadius: '50%',
           backgroundColor: value, margin: '0 12px',
-          border: '1px solid rgba(0,0,0,0.1)', flexShrink: 0,
+          border: '1px solid var(--color-border)', flexShrink: 0,
         }} />
       </div>
     </div>

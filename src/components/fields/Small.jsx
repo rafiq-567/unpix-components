@@ -4,14 +4,17 @@ export default function Small({ label = "Small Tabs" }) {
   const [tab, setTab] = useState(0);
   const tabs = ["Day", "Week", "Month"];
   return (
-    <div>
-      <p className="text-sm font-medium text-gray-700 mb-2">{label}</p>
-      <div className="inline-flex bg-gray-100 rounded-lg p-0.5 gap-0.5">
+    <div style={{ fontFamily: "sans-serif" }}>
+      <p style={{ fontSize: 13, fontWeight: 500, color: "var(--color-text-secondary)", marginBottom: 8 }}>{label}</p>
+      <div style={{ display: "inline-flex", backgroundColor: "var(--color-bg-muted)", borderRadius: 8, padding: 2, gap: 2 }}>
         {tabs.map((t, i) => (
-          <button key={t} onClick={() => setTab(i)}
-            className={`px-3 py-1.5 text-xs font-medium rounded-md transition ${tab === i ? "bg-white text-gray-800 shadow-sm" : "text-gray-500 hover:text-gray-700"}`}>
-            {t}
-          </button>
+          <button key={t} onClick={() => setTab(i)} style={{
+            padding: "6px 12px", border: "none", borderRadius: 6, cursor: "pointer", fontSize: 12,
+            fontWeight: tab === i ? 600 : 400, transition: "all 0.15s",
+            backgroundColor: tab === i ? "var(--color-surface)" : "transparent",
+            color: tab === i ? "var(--color-text-primary)" : "var(--color-text-muted)",
+            boxShadow: tab === i ? "var(--shadow-sm)" : "none",
+          }}>{t}</button>
         ))}
       </div>
     </div>

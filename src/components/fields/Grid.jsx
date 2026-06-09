@@ -1,12 +1,17 @@
 import PropTypes from "prop-types";
-const items = Array.from({ length: 9 }, (_, i) => ({ id: i + 1, title: `Item ${i + 1}`, bg: ["bg-indigo-100","bg-pink-100","bg-green-100","bg-yellow-100","bg-blue-100","bg-purple-100","bg-orange-100","bg-teal-100","bg-red-100"][i] }));
+const colors = ["#e0e7ff","#fce7f3","#dcfce7","#fef9c3","#dbeafe","#f3e8ff","#ffedd5","#ccfbf1","#fee2e2"];
+const items = Array.from({ length: 9 }, (_, i) => ({ id: i + 1, title: `Item ${i + 1}`, color: colors[i] }));
 export default function Grid({ label = "Grid", columns = 3 }) {
   return (
-    <div>
-      <p className="text-sm font-medium text-gray-700 mb-2">{label}</p>
-      <div className={`grid gap-3`} style={{ gridTemplateColumns: `repeat(${columns}, 1fr)` }}>
+    <div style={{ fontFamily: "sans-serif" }}>
+      <p style={{ fontSize: 13, fontWeight: 500, color: "var(--color-text-secondary)", marginBottom: 8 }}>{label}</p>
+      <div style={{ display: "grid", gap: 12, gridTemplateColumns: `repeat(${columns}, 1fr)` }}>
         {items.map(item => (
-          <div key={item.id} className={`${item.bg} rounded-xl p-4 flex items-center justify-center text-sm font-medium text-gray-700 h-20`}>
+          <div key={item.id} style={{
+            backgroundColor: item.color, borderRadius: 12, padding: 16,
+            display: "flex", alignItems: "center", justifyContent: "center",
+            height: 80, fontSize: 13, fontWeight: 500, color: "#374151",
+          }}>
             {item.title}
           </div>
         ))}

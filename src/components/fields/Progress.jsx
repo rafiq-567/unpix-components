@@ -1,13 +1,14 @@
 import PropTypes from "prop-types";
+
 export default function Progress({ label = "Progress", value = 65 }) {
   return (
-    <div>
+    <div className="font-sans">
       <div className="flex justify-between mb-1">
-        <span className="text-sm font-medium text-gray-700">{label}</span>
-        <span className="text-sm text-gray-500">{value}%</span>
+        <span className="text-sm font-medium text-[var(--color-text-secondary)]">{label}</span>
+        <span className="text-sm text-[var(--color-text-muted)]">{value}%</span>
       </div>
-      <div className="w-full bg-gray-200 rounded-full h-2.5">
-        <div className="bg-indigo-500 h-2.5 rounded-full transition-all" style={{ width: `${value}%` }} />
+      <div className="w-full bg-[var(--color-bg-subtle)] rounded-full h-2.5">
+        <div className="bg-[var(--color-accent)] h-2.5 rounded-full transition-all" style={{ width: `${value}%` }} />
       </div>
     </div>
   );
