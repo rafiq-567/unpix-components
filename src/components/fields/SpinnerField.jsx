@@ -51,7 +51,7 @@ export default function SpinnerField({
 
   return (
     <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
-      <p style={{ marginBottom: 12, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Spinner</p>
+      <p style={{ marginBottom: 12, fontSize: 18, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Spinner</p>
       <style>{`
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         @keyframes bounce { 0% { transform: scale(0.7); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }

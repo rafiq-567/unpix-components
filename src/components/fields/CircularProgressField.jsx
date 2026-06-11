@@ -11,7 +11,7 @@ export default function CircularProgressField({ label }) {
           strokeLinecap="round" transform={`rotate(-90 ${cx} ${cy})`} />
         <text x={cx} y={cy + 5} textAnchor="middle" fontSize="12" fill='var(--color-text-secondary)'>70%</text>
       </svg>
-      <span className="text-sm text-gray-600">{label}</span>
+      <span className="text-xl text-gray-100">Circular Progress Field{label}</span>
     </div>
   );
 }

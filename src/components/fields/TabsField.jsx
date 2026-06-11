@@ -73,7 +73,7 @@ export default function TabsField({
 
   return (
     <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
-      <p style={{ marginBottom: 12, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Tabs</p>
+      <p style={{ marginBottom: 12, fontSize: 16, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Tabs</p>
       <div style={v.tabBar}>
         {tabs.map((tab, i) => (
           <button

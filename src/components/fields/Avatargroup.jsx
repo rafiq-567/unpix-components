@@ -23,7 +23,7 @@ export default function AvatarGroup({
 
   return (
     <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
-      <p style={{ marginBottom: 10, fontSize: 13, fontWeight: 500, color: 'var(--color-text-secondary)' }}>Avatar Group</p>
+      <p style={{ marginBottom: 10, fontSize: 16, fontWeight: 900, color: 'var(--color-text-secondary)' }}>Avatar Group</p>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         {visible.map((av, i) => (
           <div

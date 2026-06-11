@@ -6,7 +6,7 @@ export default function Slider({ label = "Slider", min = 0, max = 100, defaultVa
   return (
     <div className="font-sans">
       <div className="flex justify-between mb-2">
-        <span className="text-sm font-medium text-[var(--color-text-secondary)]">{label}</span>
+        <span className="text-xl font-medium text-[var(--color-text-secondary)]">{label}</span>
         <span className="text-sm font-semibold text-[var(--color-accent)]">{value}</span>
       </div>
       <input type="range" min={min} max={max} value={value}

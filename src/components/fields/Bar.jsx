@@ -9,7 +9,7 @@ const data = [
 
 export default function Bar({ label = "Bar Chart" }) {
   return (
-    <div className="border border-[var(--color-border)] rounded-xl p-4 bg-[var(--color-surface)] font-sans">
+    <div className="border border-[var(--color-border)] text-lg  rounded-xl p-4 bg-[var(--color-surface)] font-sans">
       <h3 className="font-semibold text-[var(--color-text-primary)] mb-3">{label}</h3>
       <ResponsiveContainer width="100%" height={200}>
         <BarChart data={data}>

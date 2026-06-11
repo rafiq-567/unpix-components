@@ -5,7 +5,7 @@ import { useState } from 'react';
  * @uxpindescription Color picker input field
  */
 export default function ColorInput({
-  label = 'Background Color',
+  label = 'Color Input',
   defaultValue = 'var(--color-accent)',
   disabled = false,
   required = false,
@@ -18,7 +18,7 @@ export default function ColorInput({
   return (
     <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
       {label && (
-        <label style={{ display: 'block', marginBottom: 6, fontSize: 13, fontWeight: 500, color: 'var(--color-text-secondary)' }}>
+        <label style={{ display: 'block', marginBottom: 6, fontSize: 16, fontWeight: 900, color: 'var(--color-text-secondary)' }}>
           {label}{required && <span style={{ color: 'var(--color-danger)', marginLeft: 3 }}>*</span>}
         </label>
       )}

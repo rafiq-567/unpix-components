@@ -4,6 +4,7 @@ export default function RadioGroupField({ label }) {
     <div>
       <label className="text-[var(--color-text-secondary)]">{label}</label>
       <div className="mt-2 space-y-2">
+         <p style={{ marginBottom: 12, fontSize: 16, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Radio Group</p>
         <label className="flex gap-2 text-[var(--color-text-secondary)]"><input type="radio" name="radio" />Option 1</label>
         <label className="flex gap-2 text-[var(--color-text-secondary)]"><input type="radio" name="radio" />Option 2</label>
       </div>

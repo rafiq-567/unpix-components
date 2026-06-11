@@ -6,8 +6,8 @@ const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov
 export default function Month({ label = "Month Picker" }) {
   const [selected, setSelected] = useState(null);
   return (
-    <div className="font-sans">
-      <p className="text-sm font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
+    <div className="font-sans mt-2">
+      <p className="text-xl font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
       <div className="grid grid-cols-4 gap-2">
         {months.map((m) => (
           <button 

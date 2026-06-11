@@ -23,7 +23,7 @@ export default function ColorWithColorCode({
 
   return (
     <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
-      {label && <label style={{ display: 'block', marginBottom: 10, fontSize: 13, fontWeight: 500, color: 'var(--color-text-secondary)' }}>{label}</label>}
+      {label && <label style={{ display: 'block', marginBottom: 10, fontSize: 16, fontWeight: 900, color: 'var(--color-text-secondary)' }}>{label}</label>}
       <div style={{
         border: '1px solid var(--color-border)', borderRadius: 10, padding: 14,
         backgroundColor: 'var(--color-surface)', display: 'inline-block',

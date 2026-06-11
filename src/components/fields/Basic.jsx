@@ -5,7 +5,7 @@ export default function Basic({ label = "Basic Tabs" }) {
   const tabs = ["Tab One", "Tab Two", "Tab Three"];
   return (
     <div style={{ fontFamily: "sans-serif" }}>
-      <p style={{ fontSize: 13, fontWeight: 500, color: "var(--color-text-secondary)", marginBottom: 8 }}>{label}</p>
+      <p style={{ fontSize: 16, fontWeight: 900, color: "var(--color-text-secondary)", marginBottom: 8 }}>{label}</p>
       <div style={{ borderBottom: "1.5px solid var(--color-border)", display: "flex" }}>
         {tabs.map((t, i) => (
           <button key={t} onClick={() => setTab(i)} style={{

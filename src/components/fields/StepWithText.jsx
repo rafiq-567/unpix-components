@@ -10,7 +10,7 @@ export default function StepWithText({ label = "Steps with Text" }) {
   const [current, setCurrent] = useState(0);
   return (
     <div style={{ fontFamily: "sans-serif" }}>
-      <p style={{ fontSize: 13, fontWeight: 500, color: "var(--color-text-secondary)", marginBottom: 12 }}>{label}</p>
+      <p style={{ fontSize: 18, fontWeight: 700, color: "var(--color-text-secondary)", marginBottom: 12 }}>{label}</p>
       <div style={{ display: "flex", alignItems: "flex-start", marginBottom: 24 }}>
         {steps.map((step, i) => (
           <div key={step.label} style={{ display: "flex", alignItems: "center", flex: i < steps.length - 1 ? 1 : "none" }}>

@@ -42,7 +42,7 @@ export default function RatingField({
   return (
     <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
       {label && (
-        <label style={{ display: 'block', marginBottom: 8, fontSize: 13, fontWeight: 500, color: 'var(--color-text-secondary)' }}>{label}</label>
+        <label style={{ display: 'block', marginBottom: 8, fontSize: 18, fontWeight: 700, color: 'var(--color-text-secondary)' }}>{label}</label>
       )}
       <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
         {Array.from({ length: max }).map((_, i) => {

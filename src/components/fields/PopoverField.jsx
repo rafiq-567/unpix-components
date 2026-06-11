@@ -29,7 +29,7 @@ export default function PopoverField({
 
   return (
     <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
-      <p style={{ marginBottom: 12, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Popover</p>
+      <p style={{ marginBottom: 12, fontSize: 18, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Popover</p>
       <div style={{ position: 'relative', display: 'inline-block' }}>
         <button
           onClick={() => setOpen(!open)}

@@ -19,7 +19,7 @@ export default function MultiLabel({
 
   return (
     <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
-      <p style={{ marginBottom: 10, fontSize: 12, color: 'var(--color-text-placeholder)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Label Group</p>
+      <p style={{ marginBottom: 10, fontSize: 16, color: 'var(--color-text-placeholder)', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Label Group</p>
       <div style={{
         display: 'flex',
         flexDirection: direction === 'horizontal' ? 'row' : 'column',

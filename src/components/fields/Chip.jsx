@@ -7,7 +7,7 @@ export default function Chip({ label = "Chips" }) {
   const [chips, setChips] = useState(defaultChips);
   return (
     <div className="font-sans">
-      <p className="text-sm font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
+      <p className="text-xl font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
       <div className="flex flex-wrap gap-2">
         {chips.map((chip) => (
           <span key={chip} className="inline-flex items-center gap-1 px-3 py-1 bg-[var(--color-accent-subtle)] text-[var(--color-accent)] text-xs font-medium rounded-full border border-[var(--color-border)]">

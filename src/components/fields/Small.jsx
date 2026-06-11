@@ -5,7 +5,7 @@ export default function Small({ label = "Small Tabs" }) {
   const tabs = ["Day", "Week", "Month"];
   return (
     <div style={{ fontFamily: "sans-serif" }}>
-      <p style={{ fontSize: 13, fontWeight: 500, color: "var(--color-text-secondary)", marginBottom: 8 }}>{label}</p>
+      <p style={{ fontSize: 18, fontWeight: 500, color: "var(--color-text-secondary)", marginBottom: 8 }}>{label}</p>
       <div style={{ display: "inline-flex", backgroundColor: "var(--color-bg-muted)", borderRadius: 8, padding: 2, gap: 2 }}>
         {tabs.map((t, i) => (
           <button key={t} onClick={() => setTab(i)} style={{

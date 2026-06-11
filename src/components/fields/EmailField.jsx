@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 export default function EmailField({ label }) {
   return (
     <div>
+       <p style={{ marginBottom: 12, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Email Field</p>
       <label className="text-[var(--color-text-secondary)]">{label}</label>
       <input type="email" placeholder="name@example.com" className="w-full border border-[var(--color-border)] rounded px-3 py-2 mt-2 bg-[var(--color-surface)] text-[var(--color-text-secondary)] placeholder-[var(--color-text-placeholder)]" />
     </div>

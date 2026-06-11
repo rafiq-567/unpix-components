@@ -4,7 +4,7 @@ const items = Array.from({ length: 9 }, (_, i) => ({ id: i + 1, title: `Item ${i
 export default function Grid({ label = "Grid", columns = 3 }) {
   return (
     <div style={{ fontFamily: "sans-serif" }}>
-      <p style={{ fontSize: 13, fontWeight: 500, color: "var(--color-text-secondary)", marginBottom: 8 }}>{label}</p>
+      <p style={{ fontSize: 16, fontWeight: 900, color: "var(--color-text-secondary)", marginBottom: 8 }}>{label}</p>
       <div style={{ display: "grid", gap: 12, gridTemplateColumns: `repeat(${columns}, 1fr)` }}>
         {items.map(item => (
           <div key={item.id} style={{

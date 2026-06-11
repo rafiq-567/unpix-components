@@ -23,6 +23,7 @@ export default function BreadcrumbsIcon({
 
   return (
     <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
+      <p style={{ marginBottom: 12, fontWeight: 900, color: 'var(--color-text-secondary)' }}>Breadcrumb Icon</p>
       <nav aria-label="Breadcrumb" style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 4 }}>
         {displayed.map((item, i) => {
           const isLast = i === displayed.length - 1;

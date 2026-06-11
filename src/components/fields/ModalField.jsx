@@ -4,6 +4,7 @@ export default function ModalField({ label }) {
   const [open, setOpen] = useState(false);
   return (
     <div>
+      <p style={{ marginBottom: 12, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Modal</p>
       <button onClick={() => setOpen(true)} className="px-4 py-2 bg-indigo-500 text-white text-sm rounded hover:bg-indigo-600">
         Open {label}
       </button>

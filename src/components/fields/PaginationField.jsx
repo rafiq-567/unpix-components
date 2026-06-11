@@ -61,7 +61,7 @@ export default function PaginationField({
 
   return (
     <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
-      <p style={{ marginBottom: 12, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Pagination</p>
+      <p style={{ marginBottom: 12, fontWeight: 900, color: 'var(--color-text-secondary)' }}>Pagination</p>
       <div style={{ display: 'flex', gap: 4, alignItems: 'center', flexWrap: 'wrap' }}>
         {showFirstLast && btn('«', 1, current === 1)}
         {showPrevNext && btn('‹', current - 1, current === 1)}

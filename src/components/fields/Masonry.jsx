@@ -12,7 +12,7 @@ const items = [
 export default function Masonry({ label = "Masonry Layout" }) {
   return (
     <div className="font-sans">
-      <p className="text-sm font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
+      <p className="text-xl font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
       <div className="columns-3 gap-2 space-y-2">
         {items.map((item, i) => (
           <div key={i} className={`${item.h} ${item.bg} border border-[var(--color-border)] rounded-xl flex items-center justify-center text-sm text-[var(--color-text-secondary)] font-medium break-inside-avoid`}>

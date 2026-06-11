@@ -27,7 +27,7 @@ export default function MapField({ label = "Map", lat = 23.8103, lng = 90.4125, 
   const { MapContainer, TileLayer, Marker, Popup } = MapComponents;
   return (
     <div>
-      <label style={{ display: "block", marginBottom: 8, fontSize: 13, fontWeight: 500, color: "var(--color-text-secondary)" }}>{label}</label>
+      <label style={{ display: "block", marginBottom: 8, fontSize: 16, fontWeight: 900, color: "var(--color-text-secondary)" }}>{label}</label>
       <div style={{ position: "relative", width: "100%", borderRadius: 12, overflow: "hidden", border: "1px solid var(--color-border)", aspectRatio: "16/9" }}>
         <div style={{ position: "absolute", inset: 0 }}>
           <MapContainer center={[lat, lng]} zoom={zoom} style={{ height: "100%", width: "100%" }} scrollWheelZoom={false}>

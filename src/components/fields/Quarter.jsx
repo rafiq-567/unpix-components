@@ -7,7 +7,7 @@ export default function Quarter({ label = "Quarter Picker" }) {
   const [selected, setSelected] = useState(null);
   return (
     <div className="font-sans">
-      <p className="text-sm font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
+      <p className="text-xl font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
       <div className="grid grid-cols-2 gap-2">
         {quarters.map((q) => (
           <button 

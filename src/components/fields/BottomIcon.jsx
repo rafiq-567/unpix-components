@@ -5,7 +5,7 @@ export default function BottomIcon({ label = "Bottom Icon Tabs" }) {
   const [active, setActive] = useState(0);
   return (
     <div style={{ fontFamily: "sans-serif" }}>
-      <p style={{ fontSize: 13, fontWeight: 500, color: "var(--color-text-secondary)", marginBottom: 8 }}>{label}</p>
+      <p style={{ fontSize: 16, fontWeight: 900, color: "var(--color-text-secondary)", marginBottom: 8 }}>{label}</p>
       <div style={{ border: "1px solid var(--color-border)", borderRadius: 16, overflow: "hidden" }}>
         <div style={{ height: 96, backgroundColor: "var(--color-bg-subtle)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 13, color: "var(--color-text-placeholder)" }}>
           {tabs[active].label} Content

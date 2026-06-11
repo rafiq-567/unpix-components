@@ -37,7 +37,7 @@ export default function AccordionField({
 
   return (
     <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
-      <p style={{ marginBottom: 12, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Accordion</p>
+      <p style={{ marginBottom: 12, fontWeight: 900, color: 'var(--color-text-secondary)' }}>Accordion</p>
       <div style={{ border: `1px solid ${v.border}`, borderRadius: 8, overflow: 'hidden' }}>
         {items.map((item, i) => (
           <div key={i} style={{ borderBottom: i < items.length - 1 ? `1px solid ${v.border}` : 'none' }}>

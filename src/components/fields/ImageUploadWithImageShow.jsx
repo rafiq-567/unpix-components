@@ -7,7 +7,7 @@ export default function ImageUploadWithImageShow({ label = "Upload & Preview Ima
   
   return (
     <div className="font-sans">
-      <p className="text-sm font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
+      <p className="text-xl font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
       <label className="block border-2 border-dashed border-[var(--color-border)] rounded-xl p-4 text-center cursor-pointer hover:border-[var(--color-accent)] bg-[var(--color-surface)] mb-3">
         <span className="text-sm text-[var(--color-text-placeholder)]">Click to upload</span>
         <input type="file" accept="image/*" className="hidden" onChange={handle} />

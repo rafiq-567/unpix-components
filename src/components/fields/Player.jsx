@@ -4,7 +4,7 @@ export default function Player({ label = "Video Player", url = "https://www.yout
   const videoId = url.includes("v=") ? url.split("v=")[1]?.split("&")[0] : "";
   return (
     <div className="font-sans">
-      <p className="text-sm font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
+      <p className="text-xl font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
       <div className="rounded-xl overflow-hidden border border-[var(--color-border)] bg-black" style={{ aspectRatio: "16/9" }}>
         {videoId ? (
           <iframe width="100%" height="100%"

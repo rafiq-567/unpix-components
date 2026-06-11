@@ -13,6 +13,7 @@ export default function Calendar({ label = "Calendar" }) {
   const isToday = (day) => day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
   return (
     <div style={{ border: "1px solid var(--color-border)", borderRadius: 16, overflow: "hidden", backgroundColor: "var(--color-surface)", maxWidth: 384, width: "100%", fontFamily: "sans-serif" }}>
+       <p className="text-center mt-1" style={{ marginBottom: 12, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Calendar</p>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 16px", backgroundColor: "var(--color-accent)" }}>
         <button onClick={() => setDate(new Date(year, month - 1))} style={{ width: 32, height: 32, borderRadius: "50%", border: "none", background: "rgba(255,255,255,0.2)", color: "#fff", cursor: "pointer", fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center" }}>‹</button>
         <span style={{ fontWeight: 600, color: "#fff" }}>{monthName} {year}</span>

@@ -5,7 +5,7 @@ export default function CodeBlockField({ label = "Code Block" }) {
 
   return (
     <div style={{ fontFamily: "sans-serif" }}>
-      <label style={{ display: "block", marginBottom: 6, fontSize: 12, fontWeight: 500, color: "var(--color-text-muted)" }}>
+      <label style={{ display: "block", marginBottom: 6, fontSize: 16, fontWeight: 900, color: "var(--color-text-muted)" }}>
         {label}
       </label>
       <pre style={{

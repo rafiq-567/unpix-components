@@ -7,7 +7,7 @@ export default function ImageUploadWithNameShow({ label = "Upload & Show Name" }
   
   return (
     <div className="font-sans">
-      <p className="text-sm font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
+      <p className="text-xl font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
       <label className="flex items-center gap-3 border border-[var(--color-border)] bg-[var(--color-surface)] rounded-xl px-4 py-3 cursor-pointer hover:border-[var(--color-accent)]">
         <span className="px-3 py-1 bg-[var(--color-accent-subtle)] text-[var(--color-accent)] text-xs rounded-lg font-medium">Browse</span>
         <span className="text-sm text-[var(--color-text-placeholder)]">{name || "No file chosen"}</span>

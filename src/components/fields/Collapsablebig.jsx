@@ -5,7 +5,7 @@ import { useState } from 'react';
  * @uxpindescription Large collapsable panel with prominent header and rich content area
  */
 export default function CollapsableBig({
-  title = 'Advanced Settings',
+  title = 'Big Collapsable',
   subtitle = 'Configure advanced options for your project',
   content = 'This large collapsable section contains more detailed content, settings, or information that is shown only when expanded.',
   defaultOpen = false,

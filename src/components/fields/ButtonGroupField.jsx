@@ -4,7 +4,8 @@ export default function ButtonGroupField({ label }) {
   const [selected, setSelected] = useState("Option 1");
   const options = ["Option 1", "Option 2"];
   return (
-    <div>
+    <div className="mt-2">
+       <p style={{ marginBottom: 12, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Button Group</p>
       <label className="block mb-2 text-sm font-medium text-[var(--color-text-secondary)]">{label}</label>
       <div className="flex gap-2">
         {options.map((opt) => (

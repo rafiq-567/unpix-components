@@ -7,6 +7,9 @@
 /* ---------- LIGHT (default) ---------- */
 :root,
 [data-theme="light"] {
+  color-scheme: light; /* <--- Add this */
+  --color-purple: #8b5cf6;
+
   --color-purple: #8b5cf6;
   --color-orange: #f97316;
 
@@ -61,6 +64,9 @@
 
 /* ---------- DARK ---------- */
 [data-theme="dark"] {
+  color-scheme: dark; /* <--- Add this */
+  --color-purple: #a78bfa;
+  
   --color-purple: #a78bfa;
   --color-orange: #fb923c;
 

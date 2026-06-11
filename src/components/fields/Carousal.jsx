@@ -11,7 +11,7 @@ export default function Carousal({ label = "Carousel" }) {
   const [current, setCurrent] = useState(0);
   return (
     <div className="font-sans mt-2 mb-2">
-      <p className="text-sm font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
+      <p className="text-xl font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
       <div className="relative overflow-hidden rounded-2xl border border-[var(--color-border)]">
         <div className="h-40 flex flex-col items-center justify-center transition-all bg-[var(--color-surface)]">
           <span className="text-5xl">{slides[current].emoji}</span>

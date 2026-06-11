@@ -21,7 +21,7 @@ export default function AlertField({
 
   return (
     <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
-      <p style={{ marginBottom: 12, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Alert</p>
+      <p style={{ marginBottom: 12, fontWeight: 900, color: 'var(--color-text-secondary)' }}>Alert</p>
       <div style={{
         backgroundColor: v.bg,
         border: `1px solid ${v.border}`,

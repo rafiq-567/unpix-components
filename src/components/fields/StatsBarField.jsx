@@ -8,6 +8,7 @@ export default function StatsBarField({ label }) {
   ];
   return (
     <div className="grid grid-cols-4 divide-x divide-[var(--color-border)] border border-[var(--color-border)] rounded-lg overflow-hidden bg-[var(--color-surface)]">
+      
       {stats.map((s) => (
         <div key={s.label} className="p-4 text-center">
           <p className="text-2xl font-bold text-[var(--color-text-primary)]">{s.value}</p>

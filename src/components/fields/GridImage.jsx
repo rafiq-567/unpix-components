@@ -12,7 +12,7 @@ const images = [
 export default function GridImage({ label = "Grid Images" }) {
   return (
     <div className="font-sans">
-      <p className="text-sm font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
+      <p className="text-xl font-medium text-[var(--color-text-secondary)] mb-2">{label}</p>
       <div className="grid grid-cols-3 gap-2">
         {images.map((src, i) => (
           <img key={i} src={src} alt="" className="w-full h-24 object-cover rounded-lg border border-[var(--color-border)]" />

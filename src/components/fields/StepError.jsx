@@ -5,7 +5,7 @@ const steps = ["Details", "Payment", "Review", "Confirm"];
 export default function StepError({ label = "Step with Error", errorStep = 1 }) {
   return (
     <div className="font-sans">
-      <p className="text-sm font-medium text-[var(--color-text-secondary)] mb-3">{label}</p>
+      <p className="text-xl font-medium text-[var(--color-text-secondary)] mb-3">{label}</p>
       <div className="flex items-center">
         {steps.map((step, i) => (
           <div key={step} className="flex items-center flex-1 last:flex-none">

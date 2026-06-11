@@ -16,7 +16,7 @@ export default function AssignedToYouField({ label }) {
   return (
     <div className="border border-[var(--color-border)] rounded-xl p-4 bg-[var(--color-surface)]">
       <div className="flex items-center justify-between mb-3">
-        <h3 className="font-semibold text-[var(--color-text-primary)]">{label || "Assigned to you"}</h3>
+        <h3 className="font-semibold text-lg text-[var(--color-text-primary)]">{label || "Assigned to you"}</h3>
         <select className="text-xs border border-[var(--color-border)] rounded px-2 py-1 text-[var(--color-text-muted)] bg-[var(--color-surface)]">
           <option>All time</option><option>This week</option><option>This month</option>
         </select>

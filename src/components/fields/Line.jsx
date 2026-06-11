@@ -10,7 +10,7 @@ const data = [
 export default function Line({ label = "Line Chart" }) {
   return (
     <div className="border border-[var(--color-border)] rounded-xl p-4 bg-[var(--color-surface)] font-sans">
-      <h3 className="font-semibold text-[var(--color-text-primary)] mb-3">{label}</h3>
+      <h3 className="font-semibold text-xl text-[var(--color-text-primary)] mb-3">{label}</h3>
       <ResponsiveContainer width="100%" height={200}>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" opacity={0.5} />

@@ -26,7 +26,7 @@ export default function Kanban({ label = "Kanban Board" }) {
   };
   return (
     <div style={{ fontFamily: "sans-serif" }}>
-      <p style={{ fontSize: 13, fontWeight: 500, color: "var(--color-text-secondary)", marginBottom: 12 }}>{label}</p>
+      <p style={{ fontSize: 16, fontWeight: 900, color: "var(--color-text-secondary)", marginBottom: 12 }}>{label}</p>
       <div style={{ display: "flex", gap: 12, overflowX: "auto", paddingBottom: 8 }}>
         {Object.entries(cols).map(([col, cards]) => (
           <div key={col} onDragOver={e => e.preventDefault()} onDrop={() => onDrop(col)}

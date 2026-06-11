@@ -5,7 +5,7 @@ export default function StepWithOutText({ label = "Steps without Text", steps = 
   const [current, setCurrent] = useState(1);
   return (
     <div className="font-sans">
-      <p className="text-sm font-medium text-[var(--color-text-secondary)] mb-3">{label}</p>
+      <p className="text-xl font-medium text-[var(--color-text-secondary)] mb-3">{label}</p>
       <div className="flex items-center gap-2 mb-4">
         {Array.from({ length: steps }, (_, i) => (
           <div key={i} className="flex items-center flex-1 last:flex-none">

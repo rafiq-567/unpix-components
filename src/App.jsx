@@ -1,7 +1,3 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
 // import ThemeToggle from './components/fields/ThemeToggle'
 import AssignedByPriorityField from './components/fields/AssignedByPriorityField'
@@ -28,7 +24,6 @@ import EmailField from './components/fields/EmailField'
 import DividerField from './components/fields/DividerField'
 import DialogField from './components/fields/DialogField'
 import DateRangeField from './components/fields/DateRangeField'
-import HeadingField from './components/fields/HeadingField'
 import IssueActivitiesField from './components/fields/IssueActivitiesField'
 import LinearProgressField from './components/fields/LinearProgressField'
 import LinkField from './components/fields/LinkField'
@@ -55,7 +50,7 @@ import TextField from './components/fields/TextField'
 import TimePickerField from './components/fields/TimePickerField'
 import TimeRangeField from './components/fields/TimeRangeField'
 import TooltipField from './components/fields/TooltipField'
-import TypographyField from './components/fields/TypographyField'
+// import TypographyField from './components/fields/TypographyField'
 import UnorderedListField from './components/fields/UnorderedListField'
 import UploadField from './components/fields/UploadField'
 import AlertField from './components/fields/Alertfield'
@@ -161,241 +156,342 @@ import Grid from './components/fields/Grid'
 import Kanban from './components/fields/Kanban'
 import Gantt from './components/fields/Gantt'
 import Calendar from './components/fields/Calendar'
-import Leaflet from './components/fields/Leaflet'
 import ThemeToggle from './components/fields/ThemeToggle'
+import Heading1 from './components/fields/Heading1'
+import Heading2 from './components/fields/Heading2'
+import Heading3 from './components/fields/Heading3'
+import Heading4 from './components/fields/Heading4'
+import Heading5 from './components/fields/Heading5'
+import Heading6 from './components/fields/Heading6'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-    <ThemeToggle />
-      <TextField />
-      <EmailField />
-      <PasswordField />
-      <TextareaField />
-      <CheckboxField />
-      <RadioGroupField />
-      <RadioTilesField />
-      <SwitchField />
-      <DatePickerField />
-      <DateRangeField />
-      <TimePickerField />
-      <TimeRangeField />
-      <UploadField />
+      <ThemeToggle />
 
-      <ButtonField />
-      <ButtonGroupField />
-      <ListField />
-      <ListItemField />
-      <TooltipField />
-      <TypographyField />
-      <TableField />
-      <CircularProgressField /> 
-      <LinearProgressField />
+      <AccordionField />
 
-      <BoxField />
-      <ContainerField />
-      <DialogField />
-      <StackField />
+      <AgeSelect />
 
-      <CardField />
+      <AlertField />
 
-      <BreadcrumbField />
-      <LinkField />
+      <Appbar />
 
-      <FormControlField />
-      <FormLabelField />
+      <AssignedByPriorityField />
 
-      <EmbedField />
-      <SlotField />
-      <TestField />
+      <AssignedByStateField />
 
-      <RepeaterField />
+      <AssignedToYouField />
 
+      <AvatarField />
 
+      <AvatarGroup />
 
+      <BackDrop />
+
+      <BadgeField />
+
+      <Bar />
+
+      <Basic />
+
+      <BigButton />
 
       <BlockquoteField />
 
-      <CodeBlockField />
+      <BottomIcon />
 
+      <BoxField />
 
+      <BreadcrumbField />
+
+      <BreadcrumbsIcon />
+
+      <ButtonField />
+
+      <ButtonGroupField />
+
+      <Calendar />
 
       <CaptionField />
 
-      <StatsBarField />
-      <AssignedToYouField />
-      <AssignedByStateField />
-      <AssignedByPriorityField />
-      <IssueActivitiesField />
-      <RecentProjectsField />
+      <Card />
+
+      <CardField />
+
+      <Carousal />
+
+      <Centered />
+
+      <CheckboxField />
+
+      <Chip />
+
+      <CircularProgressField />
+
+      <CodeBlockField />
+
       <CollaboratorsField />
 
+      <Collapsable />
 
+      <CollapsableBig />
+
+      <ColorInput />
+
+      <ColorWithColorCode />
+
+      <ContainerField />
+
+      <Counter />
 
       <CreatedByYouField />
 
+      <DarkIcon />
+
+      <DataGrid />
+
+      <DatePickerField />
+
+      <DateRangeField />
+
+      <DefaultSelect />
+
+      <Details />
+
+      <DialogField />
 
       <DividerField />
 
+      <DragAndDropImageUpload />
 
+      <Drawer />
 
-      <HeadingField />
+      <EmailField />
 
+      <EmbedField />
 
+      <FabIcon />
 
+      <FabNumber />
 
+      <FileManager />
 
+      <FormControlField />
 
-      <OrderedListField />
-      <ParagraphField />
+      <FormLabelField />
 
+      <FullWidth />
 
-      <SelectField />
+      <Gantt />
 
-      <UnorderedListField />
+      <Grid />
 
+      <GridImage />
+
+      <Header />
+      
+      <Heading1 />
+
+      <Heading2 />
+
+      <Heading3 />
+
+      <Heading4 />
+
+      <Heading5 />
+
+      <Heading6 />
+
+      <Home />
+
+      <Horizontal />
+
+      <HorizontalMui />
+
+      <Icon />
+
+      <IconGroup />
+
+      <IconOnly />
+
+      <Image />
+
+      <ImageUpload />
+
+      <ImageUploadWithGridView />
+
+      <ImageUploadWithImageShow />
+
+      <ImageUploadWithNameShow />
+
+      <InputAnt />
+
+      <IssueActivitiesField />
+
+      <Kanban />
+
+      <Label />
+
+      <LargeImage />
+
+      <LeftIcon />
+
+      <Line />
+
+      <LinearProgressField />
+
+      <LinkField />
+
+      <ListField />
+
+      <ListItemField />
+
+      <LoadingButton />
 
       <MapField />
 
+      <Masonry />
 
-      <AlertField />
+      <MediumImage />
 
+      <MegaMenu />
 
-      <AvatarField />
-      <BadgeField />
-      <AlertField />
-      <SkeletonField />
-      <TagField />
-      <PaginationField />
-      <AccordionField />
-      <TabsField />
-      <ToastField />
-      <SpinnerField />
-      <NumberInputField /> 
-      {/* no */}
-      <SearchField />
       <MenuField />
-      <StepperField />
-      <RatingField />
+
+      <ModalField />
+
+      <Month />
+
+      <MultiLabel />
+
+      <Navigation />
+
+      <NewLine />
+
       <NotificationField />
+
+      <NumberInputField />
+
+      <OrderedListField />
+
+      <PaginationField />
+
+      <Paper />
+
+      <ParagraphField />
+
+      <PasswordField />
+
+      <Pie />
+
+      <Player />
+
       <PopoverField />
+
+      <Progress />
+
       <ProgressBarField />
 
-      <AgeSelect />
-      <DefaultSelect />
-      <Collapsable />
-      <CollapsableBig />
-      <AvatarGroup />
-      <BreadcrumbsIcon />
-      <ColorInput />
-      <ColorWithColorCode />
-      <InputAnt />
-      <Label />
-      <MultiLabel />
-      <FabIcon />
-
-      {/* Buttons */}
-      <BigButton />
-      <LoadingButton />
-      {/* uploads */}
-      <DragAndDropImageUpload />
-      <ImageUploadWithGridView />
-      <ImageUploadWithImageShow />
-      <ImageUploadWithNameShow />
-      <ImageUpload />
-
-      {/* Picker */}
-      <Details />
-      <Month />
       <Quarter />
-      <TimeWithEndTimeComponent />
-      <Year />
-      <Week />
 
-      <Card />
+      <RadioGroupField />
 
-      {/* progress */}
-      <Progress />
-      <Horizontal />
-      <HorizontalMui />
+      <RadioTilesField />
 
+      <RatingField />
 
-      {/* fAB */}
-      <FabNumber />
+      <RecentProjectsField />
 
-      {/* icons */}
-      <DarkIcon />
-      <Icon />
-      <IconGroup />
-      <Home />
+      <RepeaterField />
+
+      <RightIcon />
+
+      <SearchField />
+
+      <SelectField />
+
       <Settings />
 
+      <SkeletonField />
+
       <Slider />
-      <Carousal />
 
-      {/* chart */}
+      <SlotField />
 
-      <Bar />
-      <Line />
-      <Pie />
-      <Sparklink />
+      <Small />
 
-      <Chip />
-      <Counter />
-      <DataGrid />
-      
-      {/* Image */}
-      <Image />
-      <GridImage />
-      <LargeImage />
-      <MediumImage />
       <SmallImage />
 
+      <Sparklink />
 
-{/* map */}
-<Leaflet />
-<Player />
-<BackDrop />
-<Appbar />
-<Masonry />
-<Paper />
-<SpeedDial />
-<Drawer />
-<FileManager />
-<Header />
-<MegaMenu />
-<Navigation />
-<TreeView />
-<StepError />
-<StepWithOutText />
-<StepWithText />
-<Basic />
-<BottomIcon />
-<Centered />
-<FullWidth />
-<IconOnly />
-<LeftIcon />
-<NewLine />
-<RightIcon />
-<Small />
-<TopIcon />
-<Vertical />
-<VerticalBar />
-<VerticalBottomIcon />
-<VerticalIconOnly />
-<VerticalLeftIcon />
-<VerticalRightIcon />
-<VerticalTopIcon />
-<Grid />
-<Kanban />
-<Gantt />
-<Calendar />
+      <SpeedDial />
 
+      <SpinnerField />
 
+      <StackField />
 
-      
+      <StatsBarField />
+
+      <StepError />
+
+      <StepperField />
+
+      <StepWithOutText />
+
+      <StepWithText />
+
+      <SwitchField />
+
+      <TableField />
+
+      <TabsField />
+
+      <TagField />
+
+      <TestField />
+
+      <TextareaField />
+
+      <TextField />
+
+      <TimePickerField />
+
+      <TimeRangeField />
+
+      <TimeWithEndTimeComponent />
+
+      <ToastField />
+
+      <TooltipField />
+
+      <TopIcon />
+
+      <TreeView />
+
+      <UnorderedListField />
+
+      <UploadField />
+
+      <Vertical />
+
+      <VerticalBar />
+
+      <VerticalBottomIcon />
+
+      <VerticalIconOnly />
+
+      <VerticalLeftIcon />
+
+      <VerticalRightIcon />
+
+      <VerticalTopIcon />
+
+      <Week />
+
+      <Year />
 
 
     </>

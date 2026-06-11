@@ -4,6 +4,7 @@ export default function RadioTilesField({ label }) {
   const [selected, setSelected] = useState("");
   return (
     <div>
+       <p style={{ marginBottom: 12, fontSize: 16, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Radio Tiles</p>
       <label className="block mb-2 text-[var(--color-text-secondary)]">{label}</label>
       <div className="grid grid-cols-2 gap-2">
         {["Option 1", "Option 2"].map((option) => (

@@ -5,7 +5,7 @@ import { useState } from 'react';
  * @uxpindescription Collapsable panel with toggle button
  */
 export default function Collapsable({
-  title = 'Section Title',
+  title = 'Collapsable',
   content = 'This is the collapsable content. It can contain any information you want to show or hide.',
   defaultOpen = false,
   icon = '▸',

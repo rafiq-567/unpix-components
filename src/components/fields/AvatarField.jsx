@@ -63,7 +63,7 @@ export default function AvatarField({
 
   return (
     <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
-      <p style={{ marginBottom: 12, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Avatar</p>
+      <p style={{ marginBottom: 12, fontWeight: 900, color: 'var(--color-text-secondary)' }}>Avatar</p>
       <div style={containerStyle}>
         {src ? (
           <img src={src} alt={alt} style={avatarStyle} />

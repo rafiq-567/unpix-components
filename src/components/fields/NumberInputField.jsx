@@ -56,8 +56,8 @@ export default function NumberInputField({
           style={{
             display: 'block',
             marginBottom: 8,
-            fontSize: 13,
-            fontWeight: 500,
+            fontSize: 16,
+            fontWeight: 900,
             color: 'var(--color-text-secondary)',
           }}
         >

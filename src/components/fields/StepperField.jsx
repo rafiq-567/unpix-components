@@ -26,7 +26,7 @@ export default function StepperField({
 
   return (
     <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
-      <p style={{ marginBottom: 16, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Stepper</p>
+      <p style={{ marginBottom: 16, fontSize: 18, fontWeight: 600, color: 'var(--color-text-secondary)' }}>Stepper</p>
       <div style={{
         display: 'flex',
         flexDirection: orientation === 'vertical' ? 'column' : 'row',

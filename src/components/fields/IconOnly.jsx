@@ -5,7 +5,7 @@ export default function IconOnly({ label = "Icon Only Tabs" }) {
   const [active, setActive] = useState(0);
   return (
     <div style={{ fontFamily: "sans-serif" }}>
-      <p style={{ fontSize: 13, fontWeight: 500, color: "var(--color-text-secondary)", marginBottom: 8 }}>{label}</p>
+      <p style={{ fontSize: 16, fontWeight: 900, color: "var(--color-text-secondary)", marginBottom: 8 }}>{label}</p>
       <div style={{ borderBottom: "1.5px solid var(--color-border)", display: "flex" }}>
         {tabs.map((tab, i) => (
           <button key={i} onClick={() => setActive(i)} style={{

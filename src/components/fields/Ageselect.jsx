@@ -30,7 +30,7 @@ export default function AgeSelect({
   return (
     <div style={{ padding: '16px', fontFamily: 'sans-serif' }}>
       {label && (
-        <label style={{ display: 'block', marginBottom: 6, fontSize: 13, fontWeight: 500, color: 'var(--color-text-secondary)' }}>
+        <label style={{ display: 'block', marginBottom: 6, fontSize: 16, fontWeight: 900, color: 'var(--color-text-secondary)' }}>
           {label}{required && <span style={{ color: 'var(--color-danger)', marginLeft: 3 }}>*</span>}
         </label>
       )}
